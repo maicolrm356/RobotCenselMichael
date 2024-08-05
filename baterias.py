@@ -11,7 +11,7 @@ from config import logging
     
 
 # TELEGRAM BOT  
- 
+
 bot = telebot.TeleBot(TELEGRAM_TOKEN) 
 
 def enviar_mensaje_telegram(mensaje):
