@@ -3,35 +3,39 @@
 import pyautogui
 import pyperclip
 import time
+import datetime
 import logging
 import requests
-import telebot
-from config import TELEGRAM_TOKEN
-from config import logging
-    
 
-# TELEGRAM BOT  
+#Hora_actual
+hora_actual = datetime.datetime.now().strftime("%I:%M:%p")
+print(hora_actual)
 
-bot = telebot.TeleBot(TELEGRAM_TOKEN) 
 
-def enviar_mensaje_telegram(mensaje):
-    TELEGRAM_BOT_TOKEN = '6869640482:AAGA8NqVWAScgGuZap-flJ10LT3ht1q_OnE'
-    TELEGRAM_CHAT_ID = '6317428116'
+# LOGS
+logging.basicConfig(
+    filename='Hola.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+# TELEGRAM BOT
+TELEGRAM_BOT_TOKEN = '6232135002:AAGPl356BEAbpzSQlgomBQi45YBUZJk136Q'
+TELEGRAM_CHAT_ID = '7411433556'
+def mensaje_telegram(mensaje):
     url = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage'
     data = {'chat_id': TELEGRAM_CHAT_ID, 'text': mensaje}
     response = requests.post(url, data=data)
     if response.status_code == 200:
         logging.info("Mensaje enviado a Telegram.")
     else:
-        logging.error("Error al enviar mensaje a Telegram:", response.text)
-        
-        
+        logging.error("Error al enviar mensaje a Telegram:", response.text)        
+
 def iniciar_proceso():
     try:
         # ABRIR NAVEGADOR
-        logging.info('??SE INICIA PROCESO ??REPORTE BATERIAS????')
-        print('??SE INICIA PROCESO ??REPORTE BATERIAS????')
-        enviar_mensaje_telegram('??SE INICIA PROCESO ??REPORTE BATERIAS????')
+        logging.info('')
+        mensaje_telegram('SE INICIA PROCESO')
         pyautogui.hotkey('win', 'r')
         time.sleep(2)
         pyautogui.write('chrome --start-maximized', interval=0.1)
@@ -72,4 +76,4 @@ def iniciar_proceso():
     finally:
         logging.info('Se ingreso la censel correctamente')    
         
-iniciar_proceso() 
+#iniciar_proceso()
