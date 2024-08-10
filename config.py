@@ -1,12 +1,15 @@
 import logging
+import datetime
 
-# BOT TELEGRAM
-TELEGRAM_TOKEN = '6232135002:AAGPl356BEAbpzSQlgomBQi45YBUZJk136Q'
-TELEGRAM_CHAT_ID = '6317428116'
+
+#Hora_actual
+hora_actual = datetime.datetime.now().strftime("%I:%M %p")
+#print(f'ejecucion a las: {hora_actual}')
+
 
 # LOGS
 logging.basicConfig(
-    filename='Hola.log',
+    filename='Errores.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
