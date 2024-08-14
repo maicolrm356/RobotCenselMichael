@@ -8,9 +8,7 @@ import telebot
 import os
 #import cv2
 import numpy as np
-from config import logging
-from config import hora_actual
-
+from config import *
 
 tupla_filtro = ( 
             'logo_reportes_web.png',
@@ -93,7 +91,7 @@ def obtener_captura_pantalla(nombre_captura, carpeta):
     except Exception as e:
         print(f" Error al capturar: {e}")
 
-#def iniciar_filtro(img):
+def iniciar_filtro(img):
     error = '_error'
     if not img == 'eventos.png':
         ruta_imagen = obtener_ruta_imagenes(img)
@@ -135,8 +133,53 @@ def obtener_captura_pantalla(nombre_captura, carpeta):
                 return False
 
 def iniciar_formulario():
+    hola = '5:53 PM'
     pyautogui.press('tab')
-    pyautogui.write()
+    pyautogui.write(mes_y_ano, interval=0.1)
+    time.sleep(1)
+    pyautogui.press('tab')
+    pyautogui.press('tab')
+    
+    # PROCESO BATERIAS
+    if  hola == '5:53 PM' or '5:54 PM':
+        if hola == '5:54 PM':
+            pyautogui.write(fecha_desde, interval=0.1)
+            pyautogui.press('tab')
+            pyautogui.write('00:00')
+            pyautogui.press('tab')
+            pyautogui.write('12:00')
+            pyautogui.press('tab')
+            pyautogui.press('tab')
+            pyautogui.press('tab')
+            pyautogui.press('tab')
+            pyautogui.press('tab')
+            pyautogui.write('FALLO DE BATERIA / BATTERY FAILURE - LOW', interval=0.1)
+        elif hola == '5:53 PM':
+            pyautogui.write(fecha_hoy, interval=0.1)
+            time.sleep(1)
+            pyautogui.press('tab')
+            pyautogui.write('12:00')
+            pyautogui.press('tab')
+            pyautogui.write(fecha_hoy, interval=0.1)
+            time.sleep(1)
+            pyautogui.press('tab')
+            pyautogui.write('07:00')
+            pyautogui.press('tab')
+            pyautogui.press('tab')
+            pyautogui.press('tab')
+            pyautogui.press('tab')
+            pyautogui.press('tab')
+            pyautogui.write('FALLO DE BATERIA / BATTERY FAILURE - LOW', interval=0.1)
+            for img in tupla_formulario:
+                iniciar_filtro(img)
+
+def escoger_codigo_alarma():
+
+    if hora_actual == '4:04 PM' or '4:05 PM':
+        pyautogui.write('FALLO DE BATERIA / BATTERY FAILURE - LOW', interval=0.1)
+    #elif hora_actual == 
+
+
 def iniciar_sesion():
     try:
         # ABRIR NAVEGADOR
@@ -184,21 +227,14 @@ def iniciar_sesion():
             
         for img in tupla_filtro:
             iniciar_filtro(img)
+        
+        iniciar_formulario()
+        
+        
+        
     except Exception as error: 
         logging.error(' No se pudo inicar sesion: ')
 
 
-def encontrar_imagen_en_pantalla(nombre_imagen):
-    ruta_imagen = obtener_ruta_imagenes(nombre_imagen)
-    coordenadas_ruta_imagen = obtener_coordenadas_imagen_pantalla(ruta_imagen)
-    if coordenadas_ruta_imagen:
-        for imagen in tupla_filtro:
-            ruta_imagen_tupla = obtener_ruta_imagenes(imagen)
-            if ruta_imagen_tupla:
-                obtener_captura_pantalla(nombre_imagen, 'img')
-                ruta_imagen_captura = obtener_ruta_imagenes(nombre_imagen)
-                mensaje_telegram(nombre_imagen, ruta_imagen_captura)
 
-
-#encontrar_imagen_en_pantalla('reportes_web.png')
 iniciar_sesion()
