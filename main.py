@@ -21,11 +21,19 @@ tupla_formulario = (
             'exportar.png',
             'exportar_a_csv.png')
 
+horarios_procesos = [
+    ('FALLO DE BATERIA / BATTERY FAILURE - LOW', 'baterias', '11:58 AM'), 
+    ('baterias', '11:59 AM'), 
+    ('intrusion', '2:25 PM'), 
+    ('fallo_test', '2:26 AM'), 
+    ('panico', '8:15 AM')]
+
+#horarios = ['12:00 PM', '7:00 PM', '12:00 PM',  ]
 # count: nos devuelve el numero de veces que se repite un elemento
 # index: Nos devuelve la posicion de la primera aparicion de un elemento.c 
 
 # TELEGRAM BOT
-def mensaje_telegram(mensaje, ruta_imagen, nombre_imagen, carpeta):
+def mensaje_telegram(mensaje, ruta_imagen, nombre_imagen, carpeta, nombre_proceso, horario):
     TELEGRAM_BOT_TOKEN = '6232135002:AAGPl356BEAbpzSQlgomBQi45YBUZJk136Q'
     TELEGRAM_CHAT_ID = '7411433556'
     contenido_mensaje = hora_actual
@@ -47,6 +55,11 @@ def mensaje_telegram(mensaje, ruta_imagen, nombre_imagen, carpeta):
     elif mensaje == 'error_ruta_imagen':
         contenido_mensaje += (f'\nNo existe la imagen ({nombre_imagen}) en la carpeta: ({carpeta})')
         bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=contenido_mensaje)
+    elif mensaje == 'filtrando_proceso':
+        contenido_mensaje += (f'\n Se filtra el proceso de {nombre_proceso} al horario: {horario}')
+        with open(ruta_imagen, 'rb') as img_file:
+            img_data = img_file.read()
+        bot.send_photo(chat_id=TELEGRAM_CHAT_ID, photo=img_data, caption=contenido_mensaje, parse_mode='HTML')
 
 def obtener_coordenadas_imagen_pantalla(ruta_imagen):
     try:
@@ -60,7 +73,6 @@ def obtener_coordenadas_imagen_pantalla(ruta_imagen):
         return "error"
 
 def obtener_ruta_imagenes(nombre_imagen):
-
     if "pantallazo" in nombre_imagen:
         carpeta = "screenshots"
     else:
@@ -71,8 +83,7 @@ def obtener_ruta_imagenes(nombre_imagen):
         print(f"la Ruta imagen: {ruta_imagen}"); 
         return ruta_imagen
     print(f"No existe la imagen ({nombre_imagen}) en la carpeta"); 
-    return mensaje_telegram('error_ruta_imagen', ruta_imagen, nombre_imagen, carpeta)
-
+    return mensaje_telegram('error_ruta_imagen', ruta_imagen, nombre_imagen, carpeta, None, None)
 
 def obtener_captura_pantalla(nombre_captura, carpeta):
     ruta_actual = os.getcwd()
@@ -86,7 +97,7 @@ def obtener_captura_pantalla(nombre_captura, carpeta):
     print("FUNCION: OBTENER CAPTURA DE PANTALLA, RUTA IMAGEN: ", ruta_captura)
     try:
         pyautogui.screenshot(ruta_captura)
-        print(f" Captura de pantalla exitosa --> Nombre: {nombre_captura} --> carpeta: {carpeta}")
+        print(f"Captura de pantalla exitosa --> Nombre: {nombre_captura} --> carpeta: {carpeta}")
         return ruta_captura
     except Exception as e:
         print(f" Error al capturar: {e}")
@@ -105,12 +116,12 @@ def iniciar_filtro(img):
             ruta_captura = obtener_captura_pantalla(img, 'screenshots')
             ruta_imagen = obtener_ruta_imagenes(ruta_captura)
             if ruta_imagen:
-                mensaje_telegram(img, ruta_imagen, None, None)
+                mensaje_telegram(img, ruta_imagen, None, None, None, None)
                 return True
             else:
                 img = img + error
                 print(img)
-                mensaje_telegram(img, ruta_imagen, None, None)
+                mensaje_telegram(img, ruta_imagen, None, None, None, None)
                 return False
     else:
         ruta_imagen = obtener_ruta_imagenes(img)
@@ -124,61 +135,40 @@ def iniciar_filtro(img):
             ruta_captura = obtener_captura_pantalla(img, 'screenshots')
             ruta_imagen = obtener_ruta_imagenes(ruta_captura)
             if ruta_imagen:
-                mensaje_telegram(img, ruta_imagen, None, None)
+                mensaje_telegram(img, ruta_imagen, None, None, None, None)
                 return True
             else:
                 img = img + error
                 print(img)
-                mensaje_telegram(img, ruta_imagen, None, None)
+                mensaje_telegram(img, ruta_imagen, None, None, None, None)
                 return False
 
-def iniciar_formulario():
+def recorrer_formulario_filtrar():
     hola = '5:53 PM'
     pyautogui.press('tab')
     pyautogui.write(mes_y_ano, interval=0.1)
     time.sleep(1)
     pyautogui.press('tab')
     pyautogui.press('tab')
-    
-    # PROCESO BATERIAS
-    if  hola == '5:53 PM' or '5:54 PM':
-        if hola == '5:54 PM':
+    #iniciar_formulario()
+    for nombre_proceso, horario in horarios_procesos:
+    # PROCESo 2
+        if  horario == hora_actual:
             pyautogui.write(fecha_desde, interval=0.1)
             pyautogui.press('tab')
-            pyautogui.write('00:00')
+            pyautogui.write('00:00', interval=0.1)
             pyautogui.press('tab')
-            pyautogui.write('12:00')
+            pyautogui.write(fecha_hasta, interval=0.1)
             pyautogui.press('tab')
-            pyautogui.press('tab')
-            pyautogui.press('tab')
-            pyautogui.press('tab')
-            pyautogui.press('tab')
+            pyautogui.write('12:00', interval=0.1)
+            pyautogui.typewrite(['tab'] * 6)
             pyautogui.write('FALLO DE BATERIA / BATTERY FAILURE - LOW', interval=0.1)
-        elif hola == '5:53 PM':
-            pyautogui.write(fecha_hoy, interval=0.1)
-            time.sleep(1)
+            ruta_captura = obtener_captura_pantalla('filtrando_proceso.png', 'screenshots')
+            mensaje_telegram('filtrando_proceso', ruta_captura, None, None, nombre_proceso, horario)
             pyautogui.press('tab')
-            pyautogui.write('12:00')
-            pyautogui.press('tab')
-            pyautogui.write(fecha_hoy, interval=0.1)
-            time.sleep(1)
-            pyautogui.press('tab')
-            pyautogui.write('07:00')
-            pyautogui.press('tab')
-            pyautogui.press('tab')
-            pyautogui.press('tab')
-            pyautogui.press('tab')
-            pyautogui.press('tab')
-            pyautogui.write('FALLO DE BATERIA / BATTERY FAILURE - LOW', interval=0.1)
-            for img in tupla_formulario:
+        
+        for img in tupla_formulario:
                 iniciar_filtro(img)
-
-def escoger_codigo_alarma():
-
-    if hora_actual == '4:04 PM' or '4:05 PM':
-        pyautogui.write('FALLO DE BATERIA / BATTERY FAILURE - LOW', interval=0.1)
-    #elif hora_actual == 
-
 
 def iniciar_sesion():
     try:
@@ -191,7 +181,6 @@ def iniciar_sesion():
         time.sleep(2)
         pyautogui.press('enter')
         time.sleep(2)
-        #comparar_imagenes(pantallazo)
 
         # ABRIR CENSEL  
         time.sleep(2)
@@ -223,15 +212,12 @@ def iniciar_sesion():
         if coordenadas_ruta_imagen_logo:
             obtener_captura_pantalla('inicio_censel.png', 'img')
             ruta_imagen_inicio = obtener_ruta_imagenes('inicio_censel.png')
-            mensaje_telegram('ingreso_censel', ruta_imagen_inicio, None, None)
+            mensaje_telegram('ingreso_censel', ruta_imagen_inicio, None, None, None, None)
             
         for img in tupla_filtro:
             iniciar_filtro(img)
         
-        iniciar_formulario()
-        
-        
-        
+        recorrer_formulario_filtrar() 
     except Exception as error: 
         logging.error(' No se pudo inicar sesion: ')
 
