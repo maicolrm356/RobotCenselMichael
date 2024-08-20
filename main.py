@@ -11,6 +11,7 @@ import numpy as np
 from config import *
 
 tupla_filtro = ( 
+            'logo_censel.png',
             'logo_reportes_web.png',
             'eventos.png', 
             'historico_de_eventos.png',
@@ -206,14 +207,6 @@ def iniciar_sesion():
         pyautogui.press('enter')
 
         time.sleep(5)
-        ruta_imagen_logo = obtener_ruta_imagenes('logo_censel.png')
-        coordenadas_ruta_imagen_logo = obtener_coordenadas_imagen_pantalla(ruta_imagen_logo)
-        time.sleep(1)
-        if coordenadas_ruta_imagen_logo:
-            obtener_captura_pantalla('inicio_censel.png', 'img')
-            ruta_imagen_inicio = obtener_ruta_imagenes('inicio_censel.png')
-            mensaje_telegram('ingreso_censel', ruta_imagen_inicio, None, None, None, None)
-            
         for img in tupla_filtro:
             iniciar_filtro(img)
         
