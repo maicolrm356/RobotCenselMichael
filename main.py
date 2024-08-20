@@ -111,7 +111,7 @@ def iniciar_filtro(img):
         coordenadas_ruta_imagen = obtener_coordenadas_imagen_pantalla(ruta_imagen)
         if coordenadas_ruta_imagen:
             print("Coordenadas_ruta_imagen_INCIAR FILTRO:", coordenadas_ruta_imagen)
-            time.sleep(1)
+            time.sleep(5)
             pyautogui.click(coordenadas_ruta_imagen)
             time.sleep(5)
             ruta_captura = obtener_captura_pantalla(img, 'screenshots')
