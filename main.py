@@ -22,11 +22,11 @@ tupla_formulario = (
             'exportar_a_csv.png')
 
 horarios_procesos = [
-    ('FALLO DE BATERIA / BATTERY FAILURE - LOW', 'baterias', '11:58 AM'), 
-    ('baterias', '11:59 AM'), 
-    ('intrusion', '2:25 PM'), 
-    ('fallo_test', '2:26 AM'), 
-    ('panico', '8:15 AM')]
+    ('baterias', '11:58 AM', 'FALLO DE BATERIA / BATTERY FAILURE - LOW'), 
+    ('baterias', '11:59 AM', 'FALLO DE BATERIA / BATTERY FAILURE - LOW'), 
+    ('intrusion', '2:25 PM', 'INTRUSION - BUR'), 
+    ('fallo_test', '2:26 AM', 'FALLO DE TEST / TEST FAIL - FTS'), 
+    ('panico', '8:15 AM', 'PANICO - PAN')]
 
 #horarios = ['12:00 PM', '7:00 PM', '12:00 PM',  ]
 # count: nos devuelve el numero de veces que se repite un elemento
