@@ -13,8 +13,8 @@ tupla_filtro = (
             'logo_censel.png',
             'logo_reportes_web.png',
             'eventos.png', 
-            'historico_de_eventos.png',
-            'filtrar.png',) 
+            'reporte_eventos_por_fecha.png',
+            'filtros.png',) 
 
 tupla_postformulario = (    
             'buscar.png',
@@ -22,12 +22,12 @@ tupla_postformulario = (
             'exportar_a_csv.png')
 
 horarios_procesos = [
-    ('baterias', fecha_desde, fecha_hasta, '7:00 AM', '12:00', '19:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW'), #funciona
-    ('baterias', fecha_desde, fecha_hasta, '7:00 AM', '00:00', '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW'), #funciona
-    ('intrusion', fecha_ayer, fecha_hoy, '7:00 AM', '19:00', '07:00', 'INTRUSION - BUR'), #funciona
-    ('fallo_test', fecha_ayer, fecha_hoy, hora_actual, '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS'),  #funciona
-    ('panico', fecha_ayer, fecha_ayer, '7:00 AM', '00:00', '23:50', 'PANICO - PAN') #funciona
-    ]
+    ('baterias1', fecha_desde, fecha_hasta, '7:00 PM', '12:00', '19:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW'), #funciona
+    ('baterias2', fecha_desde, fecha_hasta, '12:00 PM', '00:00', '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW'), #funciona
+    ('intrusion', fecha_ayer, fecha_hoy, '8:05 AM', '19:00', '07:00', 'INTRUSION - BUR'), #funciona
+    ('fallo_test', fecha_ayer, fecha_hoy, '8:10 AM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS'),  #funciona
+    ('panico', fecha_ayer, fecha_ayer, '8:15 AM', '00:00', '23:50', 'PANICO - PAN') #funciona
+    ] #hora_actual
 # count: nos devuelve el numero de veces que se repite un elemento
 # index: Nos devuelve la posicion de la primera aparicion de un elemento.c 
 
@@ -68,17 +68,18 @@ def mensaje_telegram(mensaje, ruta_imagen, nombre_imagen, carpeta, nombre_proces
         with open(ruta_imagen, 'rb') as img_file:
             img_data = img_file.read()
         bot.send_photo(chat_id=TELEGRAM_CHAT_ID, photo=img_data, caption=contenido_mensaje, parse_mode='HTML')
-
+    elif mensaje == 'horarios_diferentes':
+        contenido_mensaje += (f'\n La hora de ejecucion: {horario} del proceso de {nombre_proceso} no coincide con la hora actual, favor validar.')
+        bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=contenido_mensaje)
 
 def obtener_coordenadas_imagen_pantalla(ruta_imagen):
     try:
         coordenadas = pyautogui.locateOnScreen(ruta_imagen, confidence=0.9)
         #if coordenadas:
             #coordenadas = (coordenadas.left, coordenadas.top)
-        print(f"Coordenadas imagen: {coordenadas}")
+        logging.info(f"Ruta imagen {ruta_imagen}. Coordenadas: {coordenadas}")
         return coordenadas
     except Exception:
-        print(f"No hay Imagen.")
         logging.error(f'No se encontro la imagen {ruta_imagen} en la pantalla')
         logging.error(Exception)
         logging.error('Error en la funcion: obtener_coordenadas_imagen_pantalla.')
@@ -96,7 +97,6 @@ def obtener_ruta_imagenes(nombre_imagen):
         if os.path.exists(ruta_imagen) and os.path.isfile(ruta_imagen): 
             return ruta_imagen
         
-        print(f"No existe la imagen ({nombre_imagen}) en la carpeta ({carpeta})"); 
         logging.error(f"No existe la imagen ({nombre_imagen}) en la carpeta ({carpeta})")
         return mensaje_telegram('error_ruta_imagen', ruta_imagen, nombre_imagen, carpeta, None, None, None)
     except Exception as e:
@@ -112,7 +112,7 @@ def obtener_captura_pantalla(nombre_captura, carpeta):
     ruta_captura = os.path.join(ruta_errores, nombre_modificado)
     try:
         pyautogui.screenshot(ruta_captura)
-        print(f"Captura de pantalla exitosa --> Nombre: {nombre_captura} --> carpeta: {carpeta}")
+        logging.info(f"Captura de pantalla exitosa --> Nombre: {nombre_captura} --> carpeta: {carpeta}")
         return ruta_captura
     except Exception as e:
         logging.error(f" Error al capturar: {e}")
@@ -129,6 +129,7 @@ def iniciar_filtro(img):
                 time.sleep(5)
                 pyautogui.click(coordenadas_ruta_imagen)
                 time.sleep(5)
+                logging.info(f'Se hizo click en: {img}')
                 ruta_captura = obtener_captura_pantalla(img, 'screenshots')
                 ruta_imagen = obtener_ruta_imagenes(ruta_captura)
                 if ruta_imagen:
@@ -145,6 +146,7 @@ def iniciar_filtro(img):
                 time.sleep(1)
                 pyautogui.doubleClick(coordenadas_ruta_imagen)
                 time.sleep(5)
+                logging.info(f'Se hizo click en: {img}')
                 ruta_captura = obtener_captura_pantalla(img, 'screenshots')
                 ruta_imagen = obtener_ruta_imagenes(ruta_captura)
                 if ruta_imagen:
@@ -155,7 +157,7 @@ def iniciar_filtro(img):
                     mensaje_telegram(img, ruta_imagen, None, None, None, None, img)
                     return False
     except Exception as e:
-        logging.error(f'Ocurrio un error en el filtro: {e}')
+        logging.error(f'Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: {e}')
         logging.error('Ocurrio un error en la funcion: iniciar_filtro.')
         logging.error(f'Parametro recibido en iniciar_filtro: {img}')
 
@@ -169,9 +171,15 @@ def recorrer_formulario_filtrar():
         print('hola')
         for nombre_proceso, fecha_desde, fecha_hasta, hora_ejecucion, hora_desde, hora_hasta, codigo_alarma in horarios_procesos:
         # PROCESo 2
-            print('hola2')            
+            print('hola2')
+            print('hora ejecucion:', hora_ejecucion)
+            print('hora actual: ', hora_actual)            
             if  hora_ejecucion == hora_actual:
-                print('proceso: ', nombre_proceso)
+                logging.info(f'Proceso a ejecutar: {nombre_proceso}, Hora ejecucion: {hora_ejecucion}, Hora actual: {hora_actual}')
+                print('nombre_proceso:')
+                print('hora ejecucion:', hora_ejecucion)
+                print('hora actual: ', hora_actual)            
+                print('proceso: ', nombre_proceso, 'fecha_desde: ', fecha_desde, 'fecha_hasta: ', fecha_hasta, 'hora_ejecucion:', hora_ejecucion, 'hora_desde: ', hora_desde, 'hora_hasta:', hora_hasta, 'codigo_alarma: ', codigo_alarma)
                 time.sleep(1)
                 pyautogui.write(fecha_desde, interval=0.1)            
                 time.sleep(1)
@@ -195,22 +203,31 @@ def recorrer_formulario_filtrar():
                 time.sleep(1)
                 ruta_captura = obtener_captura_pantalla('filtrando_proceso.png', 'screenshots')
                 mensaje_telegram('filtrando_proceso', ruta_captura, None, None, nombre_proceso, hora_ejecucion, None)
+                print('proceso: ', nombre_proceso, 'fecha_desde: ', fecha_desde, 'fecha_hasta: ', fecha_hasta, 'hora_ejecucion:', hora_ejecucion, 'hora_desde: ', hora_desde, 'hora_hasta:', hora_hasta, 'codigo_alarma: ', codigo_alarma)
 
-        print('hola3')
-        iniciar_filtro(tupla_postformulario[0])
-        no_hay_eventos = obtener_ruta_imagenes('no_hay_eventos.png')
-        coordenadas_no_hay_eventos = obtener_coordenadas_imagen_pantalla(no_hay_eventos)
-
-        if coordenadas_no_hay_eventos:
-            print('Hola4')
-            ruta_captura = obtener_captura_pantalla('no_hay_eventos.png', 'screenshots')
-            mensaje_telegram('no hay eventos', ruta_captura, None, None, nombre_proceso, None, None)
-            logging.error(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
-            logging.error('Se cancela la ejecucion del proceso censel')
-        else:
-            print('ejecuntando tupla_postforulario')
-            for img in tupla_postformulario:
-                iniciar_filtro(img)
+                print('hola3')
+                iniciar_filtro(tupla_postformulario[0])
+                time.sleep(10)
+                no_hay_eventos = obtener_ruta_imagenes('no_hay_eventos.png')
+                coordenadas_no_hay_eventos = obtener_coordenadas_imagen_pantalla(no_hay_eventos)
+                print('coordenadas no hay eventos antes del if: ', coordenadas_no_hay_eventos)
+                if coordenadas_no_hay_eventos != 'error':
+                    print('coordenadas no hay eventos antes del if: ', coordenadas_no_hay_eventos)
+                    print('Hola4')
+                    print(f'no hay eventos, nombre proceso: {nombre_proceso}')
+                    logging.error(f'no hay eventos, nombre proceso: {nombre_proceso}')
+                    ruta_captura = obtener_captura_pantalla('no_hay_eventos.png', 'screenshots')
+                    mensaje_telegram('no hay eventos', ruta_captura, None, None, nombre_proceso, None, None)
+                    logging.error(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
+                    logging.error('Se cancela la ejecucion del proceso censel')
+                else:
+                    print('ejecuntando tupla_postforulario')
+                    for img in tupla_postformulario:
+                        iniciar_filtro(img)
+            else:
+                logging.error(f'El horario {hora_ejecucion} no coincide con la hora actual {hora_actual}')
+                mensaje_telegram('horarios_diferentes', None, None, None, nombre_proceso, hora_ejecucion, None)
+                break
     except Exception as e:
         logging.error(f'Error en la funcion: recorrer_formulario_filtrar: {e}')
 
@@ -251,6 +268,7 @@ def iniciar_sesion():
 
         time.sleep(10)
         for img in tupla_filtro:
+            logging.info('Se inicia ingreso a reportes web')
             iniciar_filtro(img)
         
         recorrer_formulario_filtrar() 

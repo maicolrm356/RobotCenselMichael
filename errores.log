@@ -436,3 +436,172 @@
 2024-08-21 15:29:43,608 - ERROR - Error en la funcion: recorrer_formulario_filtrar: PyAutoGUI fail-safe triggered from mouse moving to a corner of the screen. To disable this fail-safe, set pyautogui.FAILSAFE to False. DISABLING FAIL-SAFE IS NOT RECOMMENDED.
 2024-08-21 15:31:04,443 - INFO - SE INICIA PROCESO A LAS 3:31 PM
 2024-08-21 15:32:59,958 - ERROR - No se encontraron eventos para descargar el archivo excel en el proceso de panico, mensaje enviado al telegram
+2024-08-21 19:07:20,295 - INFO - SE INICIA PROCESO A LAS 7:07 PM
+2024-08-21 19:09:00,103 - ERROR - No se encontraron eventos para descargar el archivo excel en el proceso de panico, mensaje enviado al telegram
+2024-08-21 19:09:00,103 - ERROR - Se cancela la ejecucion del proceso censel
+2024-08-22 08:05:03,136 - INFO - SE INICIA PROCESO A LAS 8:05 AM
+2024-08-22 08:05:06,605 - ERROR -  No se pudo inicar sesion: 
+2024-08-22 08:10:03,219 - INFO - SE INICIA PROCESO A LAS 8:10 AM
+2024-08-22 08:11:59,817 - ERROR - No se encontraron eventos para descargar el archivo excel en el proceso de panico, mensaje enviado al telegram
+2024-08-22 08:11:59,842 - ERROR - Se cancela la ejecucion del proceso censel
+2024-08-22 08:15:03,189 - INFO - SE INICIA PROCESO A LAS 8:15 AM
+2024-08-22 08:16:56,494 - ERROR - No se encontraron eventos para descargar el archivo excel en el proceso de panico, mensaje enviado al telegram
+2024-08-22 08:16:56,494 - ERROR - Se cancela la ejecucion del proceso censel
+2024-08-22 08:40:20,868 - INFO - SE INICIA PROCESO A LAS 8:40 AM
+2024-08-22 08:42:00,772 - ERROR - No se encontraron eventos para descargar el archivo excel en el proceso de panico, mensaje enviado al telegram
+2024-08-22 08:42:00,772 - ERROR - Se cancela la ejecucion del proceso censel
+2024-08-22 08:44:18,216 - INFO - SE INICIA PROCESO A LAS 8:44 AM
+2024-08-22 08:46:14,876 - ERROR - No se encontraron eventos para descargar el archivo excel en el proceso de panico, mensaje enviado al telegram
+2024-08-22 08:46:14,876 - ERROR - Se cancela la ejecucion del proceso censel
+2024-08-22 09:01:55,426 - INFO - SE INICIA PROCESO A LAS 9:01 AM
+2024-08-22 09:03:35,420 - ERROR - No se encontraron eventos para descargar el archivo excel en el proceso de panico, mensaje enviado al telegram
+2024-08-22 09:03:35,420 - ERROR - Se cancela la ejecucion del proceso censel
+2024-08-22 10:35:58,573 - INFO - SE INICIA PROCESO A LAS 10:35 AM
+2024-08-22 10:37:02,464 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\historico_de_eventos.png en la pantalla
+2024-08-22 10:37:02,464 - ERROR - <class 'Exception'>
+2024-08-22 10:37:02,465 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 10:37:07,506 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 10:37:07,506 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 10:37:07,506 - ERROR - Parametro recibido en iniciar_filtro: historico_de_eventos.png
+2024-08-22 10:37:07,629 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtrar.png en la pantalla
+2024-08-22 10:37:07,629 - ERROR - <class 'Exception'>
+2024-08-22 10:37:07,629 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 10:37:12,666 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 10:37:12,666 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 10:37:12,666 - ERROR - Parametro recibido en iniciar_filtro: filtrar.png
+2024-08-22 10:37:52,539 - INFO - SE INICIA PROCESO A LAS 10:37 AM
+2024-08-22 10:38:55,337 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\historico_de_eventos.png en la pantalla
+2024-08-22 10:38:55,338 - ERROR - <class 'Exception'>
+2024-08-22 10:38:55,338 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 10:39:00,379 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 10:39:00,379 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 10:39:00,379 - ERROR - Parametro recibido en iniciar_filtro: historico_de_eventos.png
+2024-08-22 10:39:00,478 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtrar.png en la pantalla
+2024-08-22 10:39:00,478 - ERROR - <class 'Exception'>
+2024-08-22 10:39:00,478 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 10:39:05,521 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 10:39:05,521 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 10:39:05,521 - ERROR - Parametro recibido en iniciar_filtro: filtrar.png
+2024-08-22 10:43:06,306 - INFO - SE INICIA PROCESO A LAS 10:43 AM
+2024-08-22 10:44:09,181 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\historico_de_eventos.png en la pantalla
+2024-08-22 10:44:09,182 - ERROR - <class 'Exception'>
+2024-08-22 10:44:09,182 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 10:44:14,225 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 10:44:14,226 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 10:44:14,226 - ERROR - Parametro recibido en iniciar_filtro: historico_de_eventos.png
+2024-08-22 10:44:14,315 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtrar.png en la pantalla
+2024-08-22 10:44:14,315 - ERROR - <class 'Exception'>
+2024-08-22 10:44:14,315 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 10:44:19,372 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 10:44:19,372 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 10:44:19,372 - ERROR - Parametro recibido en iniciar_filtro: filtrar.png
+2024-08-22 11:25:16,082 - INFO - SE INICIA PROCESO A LAS 11:25 AM
+2024-08-22 11:26:30,372 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png en la pantalla
+2024-08-22 11:26:30,372 - ERROR - <class 'Exception'>
+2024-08-22 11:26:30,372 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 11:26:35,428 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 11:26:35,428 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 11:26:35,428 - ERROR - Parametro recibido en iniciar_filtro: filtros.png
+2024-08-22 11:29:10,003 - INFO - SE INICIA PROCESO A LAS 11:29 AM
+2024-08-22 11:33:08,165 - INFO - SE INICIA PROCESO A LAS 11:33 AM
+2024-08-22 11:35:06,967 - INFO - SE INICIA PROCESO A LAS 11:35 AM
+2024-08-22 11:37:02,809 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-08-22 11:37:02,810 - ERROR - <class 'Exception'>
+2024-08-22 11:37:02,810 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 11:37:04,156 - ERROR - No se encontraron eventos para descargar el archivo excel en el proceso de fallo_test, mensaje enviado al telegram
+2024-08-22 11:37:04,156 - ERROR - Se cancela la ejecucion del proceso censel
+2024-08-22 11:42:26,510 - INFO - SE INICIA PROCESO A LAS 11:42 AM
+2024-08-22 11:43:12,392 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png en la pantalla
+2024-08-22 11:43:12,393 - ERROR - <class 'Exception'>
+2024-08-22 11:43:12,393 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 11:43:17,434 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 11:43:17,434 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 11:43:17,434 - ERROR - Parametro recibido en iniciar_filtro: logo_reportes_web.png
+2024-08-22 11:43:17,507 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png en la pantalla
+2024-08-22 11:43:17,507 - ERROR - <class 'Exception'>
+2024-08-22 11:43:17,507 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 11:43:18,541 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 11:43:18,541 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 11:43:18,541 - ERROR - Parametro recibido en iniciar_filtro: eventos.png
+2024-08-22 11:43:18,643 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png en la pantalla
+2024-08-22 11:43:18,643 - ERROR - <class 'Exception'>
+2024-08-22 11:43:18,643 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 11:43:23,675 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 11:43:23,675 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 11:43:23,675 - ERROR - Parametro recibido en iniciar_filtro: reporte_eventos_por_fecha.png
+2024-08-22 11:43:23,754 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png en la pantalla
+2024-08-22 11:43:23,754 - ERROR - <class 'Exception'>
+2024-08-22 11:43:23,754 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 11:43:28,797 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 11:43:28,797 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 11:43:28,798 - ERROR - Parametro recibido en iniciar_filtro: filtros.png
+2024-08-22 11:44:30,367 - INFO - SE INICIA PROCESO A LAS 11:44 AM
+2024-08-22 11:47:31,070 - INFO - SE INICIA PROCESO A LAS 11:47 AM
+2024-08-22 11:49:23,507 - INFO - SE INICIA PROCESO A LAS 11:49 AM
+2024-08-22 11:51:18,029 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-08-22 11:51:18,030 - ERROR - <class 'Exception'>
+2024-08-22 11:51:18,030 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 11:51:18,986 - ERROR - No se encontraron eventos para descargar el archivo excel en el proceso de fallo_test, mensaje enviado al telegram
+2024-08-22 11:51:18,986 - ERROR - Se cancela la ejecucion del proceso censel
+2024-08-22 11:59:02,076 - INFO - SE INICIA PROCESO A LAS 11:59 AM
+2024-08-22 13:59:01,713 - INFO - SE INICIA PROCESO A LAS 1:59 PM
+2024-08-22 14:17:01,816 - INFO - SE INICIA PROCESO A LAS 2:17 PM
+2024-08-22 14:17:22,084 - ERROR -  No se pudo inicar sesion: 
+2024-08-22 14:19:00,809 - INFO - SE INICIA PROCESO A LAS 2:19 PM
+2024-08-22 14:20:00,908 - INFO - SE INICIA PROCESO A LAS 2:20 PM
+2024-08-22 14:21:58,828 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-08-22 14:21:58,828 - ERROR - <class 'Exception'>
+2024-08-22 14:21:58,829 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 14:21:58,933 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png en la pantalla
+2024-08-22 14:21:58,933 - ERROR - <class 'Exception'>
+2024-08-22 14:21:58,933 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 14:22:03,991 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 14:22:03,991 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 14:22:03,992 - ERROR - Parametro recibido en iniciar_filtro: buscar.png
+2024-08-22 14:41:01,698 - INFO - SE INICIA PROCESO A LAS 2:41 PM
+2024-08-22 14:42:58,320 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-08-22 14:42:58,320 - ERROR - <class 'Exception'>
+2024-08-22 14:42:58,320 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 14:42:58,404 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png en la pantalla
+2024-08-22 14:42:58,405 - ERROR - <class 'Exception'>
+2024-08-22 14:42:58,405 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 14:43:03,454 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 14:43:03,454 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 14:43:03,454 - ERROR - Parametro recibido en iniciar_filtro: buscar.png
+2024-08-22 15:20:01,598 - INFO - SE INICIA PROCESO A LAS 3:20 PM
+2024-08-22 15:21:55,228 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-08-22 15:21:55,228 - ERROR - <class 'Exception'>
+2024-08-22 15:21:55,228 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 15:21:55,334 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png en la pantalla
+2024-08-22 15:21:55,334 - ERROR - <class 'Exception'>
+2024-08-22 15:21:55,334 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 15:22:00,393 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 15:22:00,393 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 15:22:00,394 - ERROR - Parametro recibido en iniciar_filtro: buscar.png
+2024-08-22 15:23:00,877 - INFO - SE INICIA PROCESO A LAS 3:23 PM
+2024-08-22 15:25:00,960 - INFO - SE INICIA PROCESO A LAS 3:25 PM
+2024-08-22 15:26:03,582 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png en la pantalla
+2024-08-22 15:26:03,582 - ERROR - <class 'Exception'>
+2024-08-22 15:26:03,582 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 15:26:08,639 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 15:26:08,639 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 15:26:08,639 - ERROR - Parametro recibido en iniciar_filtro: reporte_eventos_por_fecha.png
+2024-08-22 15:26:08,723 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png en la pantalla
+2024-08-22 15:26:08,723 - ERROR - <class 'Exception'>
+2024-08-22 15:26:08,724 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 15:26:13,781 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 15:26:13,781 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 15:26:13,781 - ERROR - Parametro recibido en iniciar_filtro: filtros.png
+2024-08-22 15:29:00,992 - INFO - SE INICIA PROCESO A LAS 3:29 PM
+2024-08-22 15:30:58,018 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-08-22 15:30:58,018 - ERROR - <class 'Exception'>
+2024-08-22 15:30:58,018 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 15:30:58,105 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png en la pantalla
+2024-08-22 15:30:58,105 - ERROR - <class 'Exception'>
+2024-08-22 15:30:58,105 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-08-22 15:31:03,160 - ERROR - Ocurrio un error en el filtro: Failed to read error because file is missing, has improper permissions, or is an unsupported or invalid format
+2024-08-22 15:31:03,161 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-08-22 15:31:03,161 - ERROR - Parametro recibido en iniciar_filtro: buscar.png
+2024-08-22 15:33:01,472 - INFO - SE INICIA PROCESO A LAS 3:33 PM
+2024-08-22 15:34:55,570 - ERROR - No se encontraron eventos para descargar el archivo excel en el proceso de panico, mensaje enviado al telegram
+2024-08-22 15:34:55,570 - ERROR - Se cancela la ejecucion del proceso censel
