@@ -1,9 +1,11 @@
 import logging
 from datetime import datetime, timedelta
+import psycopg2
+
 
 #Hora_actual
 hora_actual = datetime.now().strftime("%I:%M %p").lstrip('0')
-#print(hora_actual)
+print(hora_actual)
 # Diccionario para los nombres de los meses en espanol
 meses_en_espanol = {
     1: "enero", 2: "febrero", 3: "marzo", 4: "abril", 
@@ -29,4 +31,12 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
+
+conexion = psycopg2.connect(
+                    host='10.1.1.4',
+                    port='5432',
+                    database='gamble',
+                    user='postgres',
+                    password='gambleconsuerte'
+                )
 
