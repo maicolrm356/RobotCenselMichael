@@ -13,11 +13,17 @@ import win32com.client
 import warnings
 warnings.simplefilter("ignore", UserWarning)
 from psycopg2 import sql, extras
+import glob
+#import psycopg2
+import pandas
 
 tupla_inicar_sesion = (
             'cancelar_chrome.png',
             'eliminar_sesion.png',
-            'email.png')
+            'email.png',
+            'abandonar.png',
+            'email.png',
+            )
 
 tupla_filtro = (
             'logo_censel.png',
@@ -31,12 +37,13 @@ tupla_postformulario = (
             'exportar.png',
             'exportar_a_csv.png',)
 
-horarios_procesos = [                                                                                                     # base de datos de Pruebas       
-    ('baterias1', fecha_desde, fecha_hasta, '11:54 AM', '00:00', '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'replica_registro_codigos_seguridad'), #funciona
-    ('baterias2', fecha_desde, fecha_hasta, '12:08 PM', '12:00', '00:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'replica_seg_control_novedades'), #funciona
-    ('intrusion', fecha_ayer, fecha_hoy, ' 8:05 AM', '19:00', '07:00', 'INTRUSION - BUR', 'replica_seg_control_novedades'), #funciona
-    ('fallo_test', fecha_ayer, fecha_hoy, '2:05 PM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS', 'replica_seg_control_novedades'),  #funciona
-    ('panico', fecha_ayer, fecha_ayer, '8:05 AM', '00:00', '23:50', 'PANICO - PAN', 'replica_seg_control_novedades') #funciona
+horarios_procesos = [
+    #nombre_proceso                 hora_ejecucion  hora_desde hora_hasta          codigo_alarma                    columnas_excel1    columnas_excel2      columnas_excel3         columnas_excel4    columnas_excel5     tabla                         
+    ('baterias1',  fecha_desde, fecha_hasta,'8:05 PM', '00:00', '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('baterias2',  fecha_desde, fecha_hasta,'12:00 PM','12:00', '00:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('intrusion',  fecha_ayer,  fecha_hoy,  '8:05 AM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
+    ('fallo_test', fecha_ayer,  fecha_hoy,  '6:43 PM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
+    ('panico',     fecha_ayer,  fecha_ayer, '8:15 AM', '00:00', '23:50', 'PANICO - PAN',                             'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades') #funciona
     ] #hora_actual
 # count: nos devuelve el numero de veces que se repite un elemento
 # index: Nos devuelve la posicion de la primera aparicion de un elemento.c 
@@ -82,7 +89,7 @@ def mensaje_telegram(mensaje, ruta_imagen, nombre_imagen, carpeta, nombre_proces
         contenido_mensaje += (f'\n La hora de ejecucion: {horario} del proceso de {nombre_proceso} no coincide con la hora actual, favor validar.')
         bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=contenido_mensaje)
     elif mensaje == 'cerrar_chrome':
-        contenido_mensaje += (f'\n Se finaliza el proceso en la pagina de censel y se cierra el navegador. \n Se inicia con el procesamiento de la iformacion en el archivo excel')
+        contenido_mensaje += (f'\n Se finaliza el proceso en la pagina de censel y se cierra el navegador. \n\n Se inicia con el procesamiento de la iformacion en el archivo excel')
         bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=contenido_mensaje)
     elif mensaje == 'sesion_encontrada':
         contenido_mensaje += (f'Se encontro una sesion abierta en el aplicativo de censel. \nSe cierra sesion y se inicia nuevamente.')
@@ -107,7 +114,7 @@ def obtener_ruta_imagenes(nombre_imagen):
     try:                                     
         if "pantallazo" in nombre_imagen:
             carpeta = "screenshots"
-        else:
+        else:   
             carpeta = "img"
 
         ruta_imagen = os.path.join(os.getcwd(), carpeta, nombre_imagen)
@@ -156,6 +163,22 @@ def iniciar_filtro(img):
                     img = img + error
                     mensaje_telegram(img, ruta_imagen, None, None, None, None, img)
                     return False
+        elif img == 'abandonar.png':
+            ruta_imagen = obtener_ruta_imagenes(img)
+            coordenadas_ruta_imagen = obtener_coordenadas_imagen_pantalla(ruta_imagen)
+            if coordenadas_ruta_imagen:
+                time.sleep(2)
+                logging.info(f'Se hizo click en: {img}')
+                ruta_captura = obtener_captura_pantalla(img, 'screenshots')
+                ruta_imagen = obtener_ruta_imagenes(ruta_captura)
+                if ruta_imagen:
+                    mensaje_telegram(img, ruta_imagen, None, None, None, None, img)
+                    iniciar_sesion()
+                    return True
+                else:
+                    img = img + error
+                    mensaje_telegram(img, ruta_imagen, None, None, None, None, img)
+                    return False
         else:
             ruta_imagen = obtener_ruta_imagenes(img)
             coordenadas_ruta_imagen = obtener_coordenadas_imagen_pantalla(ruta_imagen)
@@ -178,77 +201,168 @@ def iniciar_filtro(img):
         logging.error('Ocurrio un error en la funcion: iniciar_filtro.')
         logging.error(f'Parametro recibido en iniciar_filtro: {img}')
 
-def consultarlistaAbonados(valores, tabla,valores_rec_czona, valores_rec_tFechaProceso, valores_rec_tFechaRecepcion, valores_puerto,nombre_proceso):
-    try:
-        contador = 0
-        print('Contador ->',contador)
-        cur = conexion.cursor()
+# def consultarlistaAbonados(valores, tabla, valores_rec_czona, valores_rec_tFechaProceso, valores_rec_tFechaRecepcion, valores_puerto, nombre_proceso):
+#     try:
+#         print('dentro de la funcion: consultarlistaAbonados')
+#         contador = 0
+#         print('Contador ->',contador)
+#         cur = conexion.cursor()
         
-        # Insertar los valores de col_values directamente
-        if(tabla == 'replica_registro_codigos_seguridad'):
-            for valor in valores:
-                # Construir la consulta de manera segura
-                query = sql.SQL(
-                    "INSERT INTO {tabla} (codigo_seguridad, fecha, tipo) VALUES (%s, %s, %s) RETURNING id_codigo"
-                ).format(
-                    tabla=sql.Identifier(tabla)
-                )
+#         # Insertar los valores de col_values directamente
+#         if(tabla == 'replica_registro_codigos_seguridad'):
+#             for valor in valores:
+#                 # Construir la consulta de manera segura
+#                 query = sql.SQL(f"INSERT INTO {tabla} (codigo_seguridad, fecha, tipo) VALUES (%s, %s, %s) RETURNING id_codigo").format(tabla=sql.Identifier(tabla)
+#                 )
 
-                # Ejecutar la consulta pasando los valores como parámetros
-                cur.execute(query, (valor, fecha_ayer, '2'))
+#                 # Ejecutar la consulta pasando los valores como parámetros
+#                 cur.execute(query, (valor, fecha_ayer, '2'))
 
-                # Obtener el ID insertado
+#                 # Obtener el ID insertado
                 
-                id_insertado = cur.fetchone()[0]  # Obtener el ID insertado
-                if id_insertado:
-                    contador+=1
-                else:
-                    print("Inserción fallida, no se retornó un ID ", valor)
-        else:
-            for valor in zip(valores, valores_rec_czona, valores_rec_tFechaProceso, valores_rec_tFechaRecepcion, valores_puerto,):
-                cue_ncuenta, rec_czona, rec_tFechaProceso, rec_tFechaRecepcion, puerto, = valor
+#                 id_insertado = cur.fetchone()[0]  # Obtener el ID insertado
+#                 if id_insertado:
+#                     contador+=1
+#                 else:
+#                     print("Inserción fallida, no se retornó un ID ", valor)
+#         else:
+#             for valor in zip(valores, valores_rec_czona, valores_rec_tFechaProceso, valores_rec_tFechaRecepcion, valores_puerto,):
+#                 cue_ncuenta, rec_czona, rec_tFechaProceso, rec_tFechaRecepcion, puerto, = valor
                 
-                query = sql.SQL(
-                    "INSERT INTO {tabla} (nombre_novedad,tipo_novedad,tipo_sensor,puerto_nov,fecha_proceso,fecha_recepcion,codigo_abonado,estado_gestion,fecha_novedad) VALUES (%s, %s, %s,%s, %s, %s,%s, %s, %s) RETURNING id_nov"
-                ).format(
-                    tabla=sql.Identifier(tabla)
-                )
+#                 query = sql.SQL(f"INSERT INTO {tabla} (nombre_novedad,tipo_novedad,tipo_sensor,puerto_nov,fecha_proceso,fecha_recepcion,codigo_abonado,estado_gestion,fecha_novedad) VALUES (%s, %s, %s,%s, %s, %s,%s, %s, %s) RETURNING id_nov").format(tabla=sql.Identifier(tabla))
 
-                # Ejecutar la consulta pasando los valores como parámetros
-                cur.execute(query, (nombre_proceso,'1',rec_czona,puerto,rec_tFechaProceso,rec_tFechaRecepcion,cue_ncuenta,'1',fecha_ayer))
+#                 # Ejecutar la consulta pasando los valores como parámetros
+#                 cur.execute(query, (nombre_proceso,'1',rec_czona,puerto,rec_tFechaProceso,rec_tFechaRecepcion,cue_ncuenta,'1',fecha_ayer))
 
-                # Obtener el ID insertado
+#                 # Obtener el ID insertado
                 
-                id_insertado = cur.fetchone()[0]  # Obtener el ID insertado
-                if id_insertado:
-                    contador+=1
-                else:
-                    print("Inserción fallida, no se retornó un ID ", valor)
+#                 id_insertado = cur.fetchone()[0]  # Obtener el ID insertado
+#                 if id_insertado:
+#                     contador+=1
+#                 else:
+#                     print("Inserción fallida, no se retornó un ID ", valor)
                 
-                sql_insert = f"""
-                INSERT INTO replica_seg_control_novedades (nombre_novedad,tipo_novedad,tipo_sensor,puerto_nov,fecha_proceso,fecha_recepcion,codigo_abonado,estado_gestion,fecha_novedad)
-                VALUES ('INTRUSION','1','{rec_czona}','{puerto}','{rec_tFechaProceso}','{rec_tFechaRecepcion}','{cue_ncuenta}','1','{fecha_ayer}');
-                """
-                logging.info(f"Ejecutando SQL: {sql_insert}")
-                cur.execute(sql_insert,(fecha_ayer))
-                conexion.commit()
+#                 sql_insert = f"""
+#                 INSERT INTO replica_seg_control_novedades (nombre_novedad,tipo_novedad,tipo_sensor,puerto_nov,fecha_proceso,fecha_recepcion,codigo_abonado,estado_gestion,fecha_novedad)
+#                 VALUES ('INTRUSION','1','{rec_czona}','{puerto}','{rec_tFechaProceso}','{rec_tFechaRecepcion}','{cue_ncuenta}','1','{fecha_ayer}');
+#                 """
+#                 logging.info(f"Ejecutando SQL: {sql_insert}")
+#                 cur.execute(sql_insert,(fecha_ayer))
+#                 conexion.commit()
+#         cur.close()
+#         conexion.close()
 
-        cur.close()
-        conexion.close()
+    #     # Enviar mensaje de exito a Telegram
+    #     print(f"fue exitosa la insertacion en la base de datos, Número de filas insertada {contador}")
+    # except Exception as e:
+    #     logging.error("Error al insertar datos:", e)
+    #     # Enviar mensaje de error a Telegram
+    #     print(f"Error al insertar datos: {e}")
+    # finally:
+    #     if os.path.exists(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx'):
+    #         os.remove(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx')
+    #         logging.info(r"Archivo C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx eliminado despues de 1 minuto.")
+    #         # enviar_mensaje_telegram(f"Archivo C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx eliminado despuÃ©s de 1 minuto.")
+    #     else:
+    #         logging.warning(r"El archivo C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx no existe.")
 
-        # Enviar mensaje de Ã©xito a Telegram
-        print(f"fue exitosa la insertacion en la base de datos, Número de filas insertada {contador}")
+# def procesar_archivo_excel(ruta_archivo, tabla, nombre_proceso):
+    # try:
+    #     print('dentro de la funcion: procesar_archivo_excel')
+    #     # Abrir el archivo de Excel
+    #     workbook = openpyxl.load_workbook(ruta_archivo)
+    #     sheet = workbook.active
+
+    #     # Buscar la columna que contiene "cue_ncuenta" 
+    #     def obtener_valores_columna(nombre_columna):
+    #         target_col = None
+    #         for cell in sheet[1]:  
+    #             if cell.value == nombre_columna:
+    #                 target_col = cell.column
+    #                 break
+    #         if not target_col:
+    #             print(f"No se encontró la columna con '{nombre_columna}'.")
+    #             return []
+    #         else:
+    #             col_values = [
+    #                 sheet.cell(row=row, column=target_col).value 
+    #                 for row in range(2, sheet.max_row + 1) 
+    #                 if sheet.cell(row=row, column=target_col).value is not None
+    #                 ]
+    #             col_values = list(dict.fromkeys(col_values)) 
+    #             return col_values
+            
+    #     def limpiar_espacios(valores):
+    #         return [valor.strip() if isinstance(valor, str) else valor for valor in valores]
+
+    #     col_cue_ncuenta = limpiar_espacios(obtener_valores_columna("cue_ncuenta"))
+    #     col_rec_czona = limpiar_espacios(obtener_valores_columna("rec_czona"))
+    #     col_rec_tFechaProceso = limpiar_espacios(obtener_valores_columna("rec_tFechaProceso"))
+    #     col_rec_tFechaRecepcion = limpiar_espacios(obtener_valores_columna("rec_tFechaRecepcion"))
+    #     col_puerto = limpiar_espacios(obtener_valores_columna("_puerto"))
+    #     # Imprimir los valores guardados
+    #     logging.info("Valores únicos de la columna 'cue_ncuenta':")
+
+    #     excel = win32com.client.Dispatch("Excel.Application")
+    #     excel.Visible = True
+    #     workbook = excel.Workbooks.Open(ruta_archivo)
+    #     sheet = workbook.Sheets(1)
+
+    #     def seleccionar_columna(nombre_columna):
+    #         for cell in sheet.Rows(1):
+    #             if cell.Value == nombre_columna:
+    #                 sheet.Columns(cell.Column).Select()
+    #                 break
+                
+    #     seleccionar_columna("cue_ncuenta")
+    #     seleccionar_columna("rec_czona")
+    #     seleccionar_columna("rec_tFechaProceso")
+    #     seleccionar_columna("rec_tFechaRecepcion")
+    #     seleccionar_columna("_puerto")
+    #     # Conexion a PostgreSQL e insercion de datos
+
+    #     # Calcular la fecha del di­a anterior
+
+    #     # Cerrar el archivo de Excel y la aplicacion de Excel
+    #     if 'workbook' in locals():
+    #         workbook.Close(SaveChanges=False)
+    #     if 'excel' in locals():
+    #         excel.Quit()
+    #     # Llamar a la funcion para insertar y mostrar los datos
+    #     # consultarlistaAbonados(col_cue_ncuenta, tabla,col_rec_czona, col_rec_tFechaProceso, col_rec_tFechaRecepcion, col_puerto,nombre_proceso)
+
+
+    # except Exception as e:
+    #     logging.error("Error al procesar el archivo de Excel:", e)
+    #     print("La inserción en la base de datos fue exitosa.")
+
+def procesar_archivo_excel(descargas_path='~/Downloads', tabla=None, nombre_proceso=None, col1=None, col2=None, col3=None, col4=None, col5=None):
+    try:
+        #ir a la carpeta descargas
+        print('dentro de la funcion: procesar_archivo_excel')
+        
+        descargas_path = os.path.expanduser(descargas_path)
+        #Todos los archivos tipo excel en la carpeta descargas
+        archivos_excel_en_descargas = glob.glob(os.path.join(descargas_path, '*.xlsx'))
+
+        if archivos_excel_en_descargas:
+            archivo_excel = max(archivos_excel_en_descargas, key=os.path.getctime)
+            print(archivo_excel)
     except Exception as e:
-        logging.error("Error al insertar datos:", e)
-        # Enviar mensaje de error a Telegram
-        print(f"Error al insertar datos: {e}")
-    finally:
-        if os.path.exists(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx'):
-            os.remove(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx')
-            logging.info(r"Archivo C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx eliminado despues de 1 minuto.")
-            # enviar_mensaje_telegram(f"Archivo C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx eliminado despuÃ©s de 1 minuto.")
-        else:
-            logging.warning(r"El archivo C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx no existe.")
+        print('Ocurrio un error al encontrar la ruta del archivo excel: ', e)
+    
+    try:
+        print('abrir archivo excel')
+        # leer archivo excel
+        excel = pandas.read_excel(archivo_excel)
+        
+        #seleccionar columna
+        if nombre_proceso == 'baterias1' or 'baterias2':
+            columna = excel[col1]
+            for valor in columna:
+                print(valor)
+    except Exception as e:
+        print('Ocurrio un error al abrir el archivo excel')
 
 
 def recorrer_formulario_filtrar():
@@ -258,7 +372,7 @@ def recorrer_formulario_filtrar():
         time.sleep(1)
         pyautogui.press('tab')
         pyautogui.press('tab')
-        for nombre_proceso, fecha_desde, fecha_hasta, hora_ejecucion, hora_desde, hora_hasta, codigo_alarma, tabla in horarios_procesos:
+        for nombre_proceso, fecha_desde, fecha_hasta, hora_ejecucion, hora_desde, hora_hasta, codigo_alarma, col1, col2, col3, col4, col5, tabla in horarios_procesos:
         # PROCESo 2
             if  hora_ejecucion == hora_actual:
                 logging.info(f'Proceso a ejecutar: {nombre_proceso}, Hora ejecucion: {hora_ejecucion}, Hora actual: {hora_actual}')
@@ -286,122 +400,79 @@ def recorrer_formulario_filtrar():
                 time.sleep(1)
                 pyautogui.press('down')
                 pyautogui.press('enter')
-                time.sleep(1)
+                time.sleep(20)
                 ruta_captura = obtener_captura_pantalla('filtrando_proceso.png', 'screenshots')
                 mensaje_telegram('filtrando_proceso', ruta_captura, None, None, nombre_proceso, hora_ejecucion, None)
-                print('proceso: ', nombre_proceso, 'fecha_desde: ', fecha_desde, 'fecha_hasta: ', fecha_hasta, 'hora_ejecucion:', hora_ejecucion, 'hora_desde: ', hora_desde, 'hora_hasta:', hora_hasta, 'codigo_alarma: ', codigo_alarma)
-
-                print('hola3')
-                iniciar_filtro(tupla_postformulario[0])
-                time.sleep(10)
-                no_hay_eventos = obtener_ruta_imagenes('no_hay_eventos.png')
-                coordenadas_no_hay_eventos = obtener_coordenadas_imagen_pantalla(no_hay_eventos)
-                print('coordenadas no hay eventos antes del if: ', coordenadas_no_hay_eventos)
-                if coordenadas_no_hay_eventos != 'error':
-                    print('coordenadas no hay eventos antes del if: ', coordenadas_no_hay_eventos)
-                    print('Hola4')
-                    print(f'no hay eventos, nombre proceso: {nombre_proceso}')
-                    logging.error(f'no hay eventos, nombre proceso: {nombre_proceso}')
-                    ruta_captura = obtener_captura_pantalla('no_hay_eventos.png', 'screenshots')
-                    mensaje_telegram('no hay eventos', ruta_captura, None, None, nombre_proceso, None, None)
-                    logging.error(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
-                    print(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
-                    logging.error('Se cancela la ejecucion del proceso censel')
-                    os.system("taskkill /f /im chrome.exe")
-                else:
-                    print('ejecuntando tupla_postforulario')
-                    for img in tupla_postformulario:
-                        iniciar_filtro(img)
-                        if img == 'exportar_a_csv.png':
-                            time.sleep(20)
-                            if os.system("taskkill /f /im chrome.exe"):
-                                mensaje_telegram('cerrar_chrome', None, None, None, None, None ,None)
-                                procesar_archivo_excel(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx', tabla,nombre_proceso)
-                                exit()
-
-            # return
+                break
             else:
                 logging.error(f'El horario {hora_ejecucion} no coincide con la hora actual {hora_actual}')
+                print(f'El horario {hora_ejecucion} no coincide con la hora actual {hora_actual}')
                 mensaje_telegram('horarios_diferentes', None, None, None, nombre_proceso, hora_ejecucion, None)
+        if ruta_captura:
+            print('fuera del for, pero dentro del otro if')
+            iniciar_filtro(tupla_postformulario[0])
+            time.sleep(10)
+            no_hay_eventos = obtener_ruta_imagenes('no_hay_eventos.png')
+            coordenadas_no_hay_eventos = obtener_coordenadas_imagen_pantalla(no_hay_eventos)
+            if coordenadas_no_hay_eventos != 'error':
+                print(f'no hay eventos, nombre proceso: {nombre_proceso}')
+                logging.error(f'no hay eventos, nombre proceso: {nombre_proceso}')
+                ruta_captura = obtener_captura_pantalla('no_hay_eventos.png', 'screenshots')
+                mensaje_telegram('no hay eventos', ruta_captura, None, None, nombre_proceso, None, None)
+                logging.error(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
+                print(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
+                logging.error('Se cancela la ejecucion del proceso censel')
+                os.system("taskkill /f /im chrome.exe")
+            else:
+                print('ejecuntando tupla_postforulario')
+                for img in tupla_postformulario:
+                    iniciar_filtro(img)
+                    if img == 'exportar_a_csv.png':
+                        time.sleep(2)
+                        os.system("taskkill /f /im chrome.exe")
+                        print('Se finaliza el proceso en la pagina de censel y se cierra el navegador.')
+                        mensaje_telegram('cerrar_chrome', None, None, None, None, None ,None)
+                        print('nombre_proceso: ', nombre_proceso)
+                        print('tabla: ', tabla)
+                        procesar_archivo_excel(tabla=tabla, nombre_proceso=nombre_proceso, col1=col1, col2=col2, col3=col3, col4=col4, col5=col5)
+                        print('antes del exit.')
+                        print('tabla: ', tabla)
+                        print('nombre_proceso: ', nombre_proceso)
+                        # exit()
     except Exception as e:
         logging.error(f'Error en la funcion: recorrer_formulario_filtrar: {e}')
 
-def procesar_archivo_excel(ruta_archivo, tabla,nombre_proceso):
-    try:
-        # Abrir el archivo de Excel
-        workbook = openpyxl.load_workbook(ruta_archivo)
-        sheet = workbook.active
-
-        # Buscar la columna que contiene "cue_ncuenta" 
-        def obtener_valores_columna(nombre_columna):
-            target_col = None
-            for cell in sheet[1]:  
-                if cell.value == nombre_columna:
-                    target_col = cell.column
-                    break
-            if not target_col:
-                logging.warning(f"No se encontró la columna con '{nombre_columna}'.")
-                return []
-            else:
-                col_values = [
-                    sheet.cell(row=row, column=target_col).value 
-                    for row in range(2, sheet.max_row + 1) 
-                    if sheet.cell(row=row, column=target_col).value is not None
-                    ]
-                col_values = list(dict.fromkeys(col_values)) 
-                return col_values
-            
-        def limpiar_espacios(valores):
-            return [valor.strip() if isinstance(valor, str) else valor for valor in valores]
-
-        col_cue_ncuenta = limpiar_espacios(obtener_valores_columna("cue_ncuenta"))
-        col_rec_czona = limpiar_espacios(obtener_valores_columna("rec_czona"))
-        col_rec_tFechaProceso = limpiar_espacios(obtener_valores_columna("rec_tFechaProceso"))
-        col_rec_tFechaRecepcion = limpiar_espacios(obtener_valores_columna("rec_tFechaRecepcion"))
-        col_puerto = limpiar_espacios(obtener_valores_columna("_puerto"))
-        # Imprimir los valores guardados
-        logging.info("Valores únicos de la columna 'cue_ncuenta':")
-
-        excel = win32com.client.Dispatch("Excel.Application")
-        excel.Visible = True
-        workbook = excel.Workbooks.Open(ruta_archivo)
-        sheet = workbook.Sheets(1)
-
-        def seleccionar_columna(nombre_columna):
-            for cell in sheet.Rows(1):
-                if cell.Value == nombre_columna:
-                    sheet.Columns(cell.Column).Select()
-                    break
-                
-        seleccionar_columna("cue_ncuenta")
-        seleccionar_columna("rec_czona")
-        seleccionar_columna("rec_tFechaProceso")
-        seleccionar_columna("rec_tFechaRecepcion")
-        seleccionar_columna("_puerto")
-        # ConexiÃ³n a PostgreSQL e inserciÃ³n de datos
-
-        # Calcular la fecha del dÃ­a anterior
-        fecha_ayer = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
-        logging.info(f"Fecha de ayer: {fecha_ayer}")
-
-        # Cerrar el archivo de Excel y la aplicaciÃ³n de Excel
-        if 'workbook' in locals():
-            workbook.Close(SaveChanges=False)
-        if 'excel' in locals():
-            excel.Quit()
-        # Llamar a la funciÃ³n para insertar y mostrar los datos
-        consultarlistaAbonados(col_cue_ncuenta, tabla,col_rec_czona, col_rec_tFechaProceso, col_rec_tFechaRecepcion, col_puerto,nombre_proceso)
 
 
-    except Exception as e:
-        logging.error("Error al procesar el archivo de Excel:", e)
-        print("La inserción en la base de datos fue exitosa.")
+# def validar_descarga_archivo()
+#             print('hola3')
+#             iniciar_filtro(tupla_postformulario[0])
+#             time.sleep(10)
+#             no_hay_eventos = obtener_ruta_imagenes('no_hay_eventos.png')
+#             coordenadas_no_hay_eventos = obtener_coordenadas_imagen_pantalla(no_hay_eventos)
+#             if coordenadas_no_hay_eventos != 'error':
+#                 print(f'no hay eventos, nombre proceso: {nombre_proceso}')
+#                 logging.error(f'no hay eventos, nombre proceso: {nombre_proceso}')
+#                 ruta_captura = obtener_captura_pantalla('no_hay_eventos.png', 'screenshots')
+#                 mensaje_telegram('no hay eventos', ruta_captura, None, None, nombre_proceso, None, None)
+#                 logging.error(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
+#                 print(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
+#                 logging.error('Se cancela la ejecucion del proceso censel')
+#                 os.system("taskkill /f /im chrome.exe")
+#             else:
+#                 print('ejecuntando tupla_postforulario')
+#                 for img in tupla_postformulario:
+#                     iniciar_filtro(img)
+#                     if img == 'exportar_a_csv.png':
+#                         time.sleep(20)
+#                         if os.system("taskkill /f /im chrome.exe"):
+#                             mensaje_telegram('cerrar_chrome', None, None, None, None, None ,None)
+#                             #procesar_archivo_excel(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx', 'replica_registro_codigos_seguridad', nombre_proceso)
+#                             exit()
+#             # return
 
-        # Cerrar el archivo de Excel y la aplicaciÃ³n de Excel
-        if 'workbook' in locals():
-            workbook.Close(SaveChanges=False)
-        if 'excel' in locals():
-            excel.Quit()
+
+
 
 def iniciar_sesion():
     try:
@@ -414,10 +485,11 @@ def iniciar_sesion():
         time.sleep(2)
         pyautogui.press('enter')
         time.sleep(2)
+        print('Hola mundo')
         
         # ABRIR CENSEL  
         time.sleep(2)
-        pyautogui.write("http://161.10.252.131:8080/", interval=0.01)
+        pyautogui.write("censelc.ultrasecuritysolution.com", interval=0.01)
         time.sleep(1)
         pyautogui.press('enter')
         time.sleep(2)
@@ -426,8 +498,7 @@ def iniciar_sesion():
         for img in tupla_inicar_sesion:
             iniciar_filtro(img)
         
-        
-        # INICIAR SESION
+            # INICIAR SESION
         time.sleep(2)
         pyperclip.copy('@')
         #pyautogui.hotkey('tab')
@@ -439,7 +510,7 @@ def iniciar_sesion():
         pyautogui.write('consuerte.com', interval=0.01)
         pyautogui.hotkey('tab')
         time.sleep(2)
-        pyautogui.write('Oscar1007420377', interval=0.01)
+        pyautogui.write('Oscar13579', interval=0.01)
         time.sleep(2)
         pyautogui.hotkey('tab')
         pyautogui.press('enter')
@@ -454,6 +525,7 @@ def iniciar_sesion():
         logging.error(' No se pudo inicar sesion: ')
 
 
-# procesar_archivo_excel(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx','replica_registro_codigos_seguridad')
+#procesar_archivo_excel(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx','replica_registro_codigos_seguridad', 'baterias')
 # replica_seg_control_novedades
 iniciar_sesion()
+# procesar_archivo_excel()

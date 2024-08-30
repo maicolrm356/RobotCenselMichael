@@ -25,6 +25,9 @@ fecha_hoy = datetime.now().strftime("%d/%m/%Y")
 fecha_desde = fecha_hoy
 fecha_hasta = fecha_hoy
 fecha_ayer = (datetime.now() - timedelta(days=1)).strftime("%d/%m/%Y")
+
+fecha_ayer2 = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
+
 # LOGS
 logging.basicConfig(
     filename='Errores.log',
