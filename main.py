@@ -8,7 +8,6 @@ import telebot
 import os
 import numpy as np
 from config import *
-import openpyxl
 import win32com.client
 import warnings
 warnings.simplefilter("ignore", UserWarning)
@@ -39,10 +38,10 @@ tupla_postformulario = (
 
 horarios_procesos = [
     #nombre_proceso                 hora_ejecucion  hora_desde hora_hasta          codigo_alarma                    columnas_excel1    columnas_excel2      columnas_excel3         columnas_excel4    columnas_excel5     tabla                         
-    ('baterias1',  fecha_desde, fecha_hasta,'8:05 PM', '00:00', '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('baterias2',  fecha_desde, fecha_hasta,'12:00 PM','12:00', '00:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('intrusion',  fecha_ayer,  fecha_hoy,  '8:05 AM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
-    ('fallo_test', fecha_ayer,  fecha_hoy,  '6:43 PM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
+    ('baterias1',  fecha_desde, fecha_hasta,'1:23 PM', '00:00', '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('baterias2',  fecha_desde, fecha_hasta,'1:27 PM','12:00', '00:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('intrusion',  fecha_ayer,  fecha_hoy,  '1:31    PM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
+    ('fallo_test', fecha_ayer,  fecha_hoy,  '11:41 AM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
     ('panico',     fecha_ayer,  fecha_ayer, '8:15 AM', '00:00', '23:50', 'PANICO - PAN',                             'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades') #funciona
     ] #hora_actual
 # count: nos devuelve el numero de veces que se repite un elemento
@@ -355,12 +354,70 @@ def procesar_archivo_excel(descargas_path='~/Downloads', tabla=None, nombre_proc
         print('abrir archivo excel')
         # leer archivo excel
         excel = pandas.read_excel(archivo_excel)
+        print('nombre_proceso antes del if: ',nombre_proceso)
+        print('nombre de la tabla a ingresar los datos en la base de datos:', tabla)
         
         #seleccionar columna
-        if nombre_proceso == 'baterias1' or 'baterias2':
+
+        if nombre_proceso == 'baterias1' or nombre_proceso == 'baterias2':
+            print('primer if')
             columna = excel[col1]
+
+            print('cue_cuenta:')
             for valor in columna:
                 print(valor)
+                
+        elif nombre_proceso == 'intrusion' or nombre_proceso == 'panico':
+            print('dentro del if: intrusion o panico')
+            columna1 = excel[col1]
+            columna2 = excel[col2]
+            columna3 = excel[col3]
+            columna4 = excel[col4]
+            columna5 = excel[col5]
+            print('antes del for')
+            
+            print("cue_ncuenta:")
+            for valor1 in columna1:
+                print(valor1)
+
+            print("rec_czona:")
+            for valor2 in columna2:
+                print(valor2)
+
+            print("\rec_tFechaProceso:")
+            for valor3 in columna3:
+                print(valor3)
+
+            print("\rec_tFechaRecepcion:")
+            for valor4 in columna4:
+                print(valor4)
+
+            print("\_puerto:")
+            for valor5 in columna5:
+                print(valor5)
+
+        elif nombre_proceso == 'fallo_test':
+            print('ultimo if')
+            columna1 = excel[col1]
+            columna2 = excel[col2]
+            columna3 = excel[col3]
+            columna4 = excel[col4]
+            
+            print("\cue_ncuenta:")
+            for valor1 in columna1:
+                print(valor1)
+
+            print("\rec_tFechaProceso:")
+            for valor2 in columna2:
+                print(valor2)
+
+            print("\rec_tFechaRecepcion:")
+            for valor3 in columna3:
+                print(valor3)
+
+            print("\tablaDatos:")
+            for valor4 in columna4:
+                print(valor4)
     except Exception as e:
         print('Ocurrio un error al abrir el archivo excel')
 
