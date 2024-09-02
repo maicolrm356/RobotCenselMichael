@@ -38,11 +38,11 @@ tupla_postformulario = (
 
 horarios_procesos = [
     #nombre_proceso                 hora_ejecucion  hora_desde hora_hasta          codigo_alarma                    columnas_excel1    columnas_excel2      columnas_excel3         columnas_excel4    columnas_excel5     tabla                         
-    ('baterias1',  fecha_desde, fecha_hasta,'1:23 PM', '00:00', '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('baterias2',  fecha_desde, fecha_hasta,'1:27 PM','12:00', '00:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('intrusion',  fecha_ayer,  fecha_hoy,  '1:31    PM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
-    ('fallo_test', fecha_ayer,  fecha_hoy,  '11:41 AM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
-    ('panico',     fecha_ayer,  fecha_ayer, '8:15 AM', '00:00', '23:50', 'PANICO - PAN',                             'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades') #funciona
+    ('baterias1',  fecha_desde, fecha_hasta,'5:07 PM', '00:00', '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('baterias2',  fecha_desde, fecha_hasta,'5:qw PM','12:00', '00:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW',  'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('intrusion',  fecha_ayer,  fecha_hoy,  '8:05 AM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
+    ('fallo_test', fecha_ayer,  fecha_hoy,  '8:10 AM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
+    ('panico',     fecha_ayer,  fecha_ayer, '6:08 PM', '00:00', '23:50', 'PANICO SILENCIOSO / PANIC SILENCE - DUR',  'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades') #funciona
     ] #hora_actual
 # count: nos devuelve el numero de veces que se repite un elemento
 # index: Nos devuelve la posicion de la primera aparicion de un elemento.c 
@@ -200,142 +200,13 @@ def iniciar_filtro(img):
         logging.error('Ocurrio un error en la funcion: iniciar_filtro.')
         logging.error(f'Parametro recibido en iniciar_filtro: {img}')
 
-# def consultarlistaAbonados(valores, tabla, valores_rec_czona, valores_rec_tFechaProceso, valores_rec_tFechaRecepcion, valores_puerto, nombre_proceso):
-#     try:
-#         print('dentro de la funcion: consultarlistaAbonados')
-#         contador = 0
-#         print('Contador ->',contador)
-#         cur = conexion.cursor()
-        
-#         # Insertar los valores de col_values directamente
-#         if(tabla == 'replica_registro_codigos_seguridad'):
-#             for valor in valores:
-#                 # Construir la consulta de manera segura
-#                 query = sql.SQL(f"INSERT INTO {tabla} (codigo_seguridad, fecha, tipo) VALUES (%s, %s, %s) RETURNING id_codigo").format(tabla=sql.Identifier(tabla)
-#                 )
-
-#                 # Ejecutar la consulta pasando los valores como parámetros
-#                 cur.execute(query, (valor, fecha_ayer, '2'))
-
-#                 # Obtener el ID insertado
-                
-#                 id_insertado = cur.fetchone()[0]  # Obtener el ID insertado
-#                 if id_insertado:
-#                     contador+=1
-#                 else:
-#                     print("Inserción fallida, no se retornó un ID ", valor)
-#         else:
-#             for valor in zip(valores, valores_rec_czona, valores_rec_tFechaProceso, valores_rec_tFechaRecepcion, valores_puerto,):
-#                 cue_ncuenta, rec_czona, rec_tFechaProceso, rec_tFechaRecepcion, puerto, = valor
-                
-#                 query = sql.SQL(f"INSERT INTO {tabla} (nombre_novedad,tipo_novedad,tipo_sensor,puerto_nov,fecha_proceso,fecha_recepcion,codigo_abonado,estado_gestion,fecha_novedad) VALUES (%s, %s, %s,%s, %s, %s,%s, %s, %s) RETURNING id_nov").format(tabla=sql.Identifier(tabla))
-
-#                 # Ejecutar la consulta pasando los valores como parámetros
-#                 cur.execute(query, (nombre_proceso,'1',rec_czona,puerto,rec_tFechaProceso,rec_tFechaRecepcion,cue_ncuenta,'1',fecha_ayer))
-
-#                 # Obtener el ID insertado
-                
-#                 id_insertado = cur.fetchone()[0]  # Obtener el ID insertado
-#                 if id_insertado:
-#                     contador+=1
-#                 else:
-#                     print("Inserción fallida, no se retornó un ID ", valor)
-                
-#                 sql_insert = f"""
-#                 INSERT INTO replica_seg_control_novedades (nombre_novedad,tipo_novedad,tipo_sensor,puerto_nov,fecha_proceso,fecha_recepcion,codigo_abonado,estado_gestion,fecha_novedad)
-#                 VALUES ('INTRUSION','1','{rec_czona}','{puerto}','{rec_tFechaProceso}','{rec_tFechaRecepcion}','{cue_ncuenta}','1','{fecha_ayer}');
-#                 """
-#                 logging.info(f"Ejecutando SQL: {sql_insert}")
-#                 cur.execute(sql_insert,(fecha_ayer))
-#                 conexion.commit()
-#         cur.close()
-#         conexion.close()
-
-    #     # Enviar mensaje de exito a Telegram
-    #     print(f"fue exitosa la insertacion en la base de datos, Número de filas insertada {contador}")
-    # except Exception as e:
-    #     logging.error("Error al insertar datos:", e)
-    #     # Enviar mensaje de error a Telegram
-    #     print(f"Error al insertar datos: {e}")
-    # finally:
-    #     if os.path.exists(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx'):
-    #         os.remove(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx')
-    #         logging.info(r"Archivo C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx eliminado despues de 1 minuto.")
-    #         # enviar_mensaje_telegram(f"Archivo C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx eliminado despuÃ©s de 1 minuto.")
-    #     else:
-    #         logging.warning(r"El archivo C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx no existe.")
-
-# def procesar_archivo_excel(ruta_archivo, tabla, nombre_proceso):
-    # try:
-    #     print('dentro de la funcion: procesar_archivo_excel')
-    #     # Abrir el archivo de Excel
-    #     workbook = openpyxl.load_workbook(ruta_archivo)
-    #     sheet = workbook.active
-
-    #     # Buscar la columna que contiene "cue_ncuenta" 
-    #     def obtener_valores_columna(nombre_columna):
-    #         target_col = None
-    #         for cell in sheet[1]:  
-    #             if cell.value == nombre_columna:
-    #                 target_col = cell.column
-    #                 break
-    #         if not target_col:
-    #             print(f"No se encontró la columna con '{nombre_columna}'.")
-    #             return []
-    #         else:
-    #             col_values = [
-    #                 sheet.cell(row=row, column=target_col).value 
-    #                 for row in range(2, sheet.max_row + 1) 
-    #                 if sheet.cell(row=row, column=target_col).value is not None
-    #                 ]
-    #             col_values = list(dict.fromkeys(col_values)) 
-    #             return col_values
-            
-    #     def limpiar_espacios(valores):
-    #         return [valor.strip() if isinstance(valor, str) else valor for valor in valores]
-
-    #     col_cue_ncuenta = limpiar_espacios(obtener_valores_columna("cue_ncuenta"))
-    #     col_rec_czona = limpiar_espacios(obtener_valores_columna("rec_czona"))
-    #     col_rec_tFechaProceso = limpiar_espacios(obtener_valores_columna("rec_tFechaProceso"))
-    #     col_rec_tFechaRecepcion = limpiar_espacios(obtener_valores_columna("rec_tFechaRecepcion"))
-    #     col_puerto = limpiar_espacios(obtener_valores_columna("_puerto"))
-    #     # Imprimir los valores guardados
-    #     logging.info("Valores únicos de la columna 'cue_ncuenta':")
-
-    #     excel = win32com.client.Dispatch("Excel.Application")
-    #     excel.Visible = True
-    #     workbook = excel.Workbooks.Open(ruta_archivo)
-    #     sheet = workbook.Sheets(1)
-
-    #     def seleccionar_columna(nombre_columna):
-    #         for cell in sheet.Rows(1):
-    #             if cell.Value == nombre_columna:
-    #                 sheet.Columns(cell.Column).Select()
-    #                 break
-                
-    #     seleccionar_columna("cue_ncuenta")
-    #     seleccionar_columna("rec_czona")
-    #     seleccionar_columna("rec_tFechaProceso")
-    #     seleccionar_columna("rec_tFechaRecepcion")
-    #     seleccionar_columna("_puerto")
-    #     # Conexion a PostgreSQL e insercion de datos
-
-    #     # Calcular la fecha del di­a anterior
-
-    #     # Cerrar el archivo de Excel y la aplicacion de Excel
-    #     if 'workbook' in locals():
-    #         workbook.Close(SaveChanges=False)
-    #     if 'excel' in locals():
-    #         excel.Quit()
-    #     # Llamar a la funcion para insertar y mostrar los datos
-    #     # consultarlistaAbonados(col_cue_ncuenta, tabla,col_rec_czona, col_rec_tFechaProceso, col_rec_tFechaRecepcion, col_puerto,nombre_proceso)
-
-
-    # except Exception as e:
-    #     logging.error("Error al procesar el archivo de Excel:", e)
-    #     print("La inserción en la base de datos fue exitosa.")
-
 def procesar_archivo_excel(descargas_path='~/Downloads', tabla=None, nombre_proceso=None, col1=None, col2=None, col3=None, col4=None, col5=None):
+    try:
+        conexion = conexion_postgres()
+        cur = conexion.cursor()
+        print('conexion a la base de datos: exitosa')
+    except Exception as e:
+        print('error en la conexion: ', e)
     try:
         #ir a la carpeta descargas
         print('dentro de la funcion: procesar_archivo_excel')
@@ -358,66 +229,91 @@ def procesar_archivo_excel(descargas_path='~/Downloads', tabla=None, nombre_proc
         print('nombre de la tabla a ingresar los datos en la base de datos:', tabla)
         
         #seleccionar columna
-
+        contador = 0
         if nombre_proceso == 'baterias1' or nombre_proceso == 'baterias2':
             print('primer if')
-            columna = excel[col1]
-
+            cue_ncuenta = excel[col1]
+            cue_ncuenta_sin_duplicados = set(cue_ncuenta)
+            
             print('cue_cuenta:')
-            for valor in columna:
-                print(valor)
-                
+            for valor in cue_ncuenta_sin_duplicados:
+                sentencia = f"INSERT INTO {tabla} (codigo_seguridad, fecha, tipo) VALUES ('{valor}', '{fecha_ayer}', '2')"
+                cur.execute(sentencia)
+                contador += 1
+            conexion.commit()
+            print(sentencia)
+            print('numero de valores insertados: ', contador)
         elif nombre_proceso == 'intrusion' or nombre_proceso == 'panico':
             print('dentro del if: intrusion o panico')
-            columna1 = excel[col1]
-            columna2 = excel[col2]
-            columna3 = excel[col3]
-            columna4 = excel[col4]
-            columna5 = excel[col5]
+            cue_ncuenta = excel[col1]
+            rec_czona = excel[col2]
+            rec_tFechaProceso = excel[col3]
+            rec_tFechaRecepcion = excel[col4]
+            _puerto = excel[col5]
             print('antes del for')
-            
-            print("cue_ncuenta:")
-            for valor1 in columna1:
-                print(valor1)
-
-            print("rec_czona:")
-            for valor2 in columna2:
-                print(valor2)
-
-            print("\rec_tFechaProceso:")
-            for valor3 in columna3:
-                print(valor3)
-
-            print("\rec_tFechaRecepcion:")
-            for valor4 in columna4:
-                print(valor4)
-
-            print("\_puerto:")
-            for valor5 in columna5:
-                print(valor5)
+            try:
+                for cue_ncuenta, rec_czona, rec_tFechaProceso, rec_tFechaRecepcion, _puerto in zip(cue_ncuenta, rec_czona, rec_tFechaProceso, rec_tFechaRecepcion, _puerto):
+                    #cue_ncuenta, rec_czona, rec_tFechaProceso, rec_tFechaRecepcion, _puerto, = valor
+                    
+                    valores = {
+                        "nombre_novedad": f"'{nombre_proceso.upper()}'" if nombre_proceso else 'NULL',
+                        "tipo_novedad": "'1'",
+                        "tipo_sensor": f"'{rec_czona}'" if rec_czona.strip() else 'NULL',
+                        "puerto_nov": f"'{_puerto}'" if _puerto.strip() else 'NULL',
+                        "fecha_proceso": f"'{rec_tFechaProceso}'" if rec_tFechaProceso.strip() else 'NULL',
+                        "fecha_recepcion": f"'{rec_tFechaRecepcion}'" if rec_tFechaRecepcion.strip() else 'NULL',
+                        "codigo_abonado": f"'{cue_ncuenta}'" if cue_ncuenta else 'NULL',
+                        "estado_gestion": "'1'",
+                        "estado_gestion": "'1'",
+                        "fecha_novedad": f"'{fecha_ayer}'"
+                        }
+                    
+                    columnas = ", ".join(valores.keys())
+                    valores_sql = ", ".join(valores.values())
+    
+                    sentencia = f"INSERT INTO {tabla} ({columnas}) VALUES ({valores_sql})"
+                    cur.execute(sentencia)
+                    contador += 1
+                conexion.commit()
+                print(sentencia)
+                print('valores insertados: ', contador)
+                print('en: ', nombre_proceso)
+            except Exception as e:
+                print(f'ocurrio un error en {nombre_proceso}:', e)
 
         elif nombre_proceso == 'fallo_test':
             print('ultimo if')
-            columna1 = excel[col1]
-            columna2 = excel[col2]
-            columna3 = excel[col3]
-            columna4 = excel[col4]
-            
-            print("\cue_ncuenta:")
-            for valor1 in columna1:
-                print(valor1)
-
-            print("\rec_tFechaProceso:")
-            for valor2 in columna2:
-                print(valor2)
-
-            print("\rec_tFechaRecepcion:")
-            for valor3 in columna3:
-                print(valor3)
-
-            print("\tablaDatos:")
-            for valor4 in columna4:
-                print(valor4)
+            cue_ncuenta = excel[col1]
+            rec_tFechaProceso = excel[col2]
+            rec_tFechaRecepcion = excel[col3]
+            tablaDatos = excel[col4]
+        try:    
+                for cue_ncuenta, rec_tFechaProceso, rec_tFechaRecepcion, tablaDatos in zip(cue_ncuenta, rec_tFechaProceso, rec_tFechaRecepcion, tablaDatos):
+                    
+                    valores = {
+                            "nombre_novedad": f"'{nombre_proceso.upper()}'" if nombre_proceso else 'NULL',
+                            "tipo_novedad": "'4'",
+                            "tipo_sensor": "'0'",
+                            "puerto_nov": f"'{tablaDatos}'" if tablaDatos.strip() else 'NULL',
+                            "fecha_proceso": f"'{rec_tFechaProceso}'" if rec_tFechaProceso.strip() else 'NULL',
+                            "fecha_recepcion": f"'{rec_tFechaRecepcion}'" if rec_tFechaRecepcion.strip() else 'NULL',
+                            "codigo_abonado": f"'{cue_ncuenta}'" if cue_ncuenta else 'NULL',
+                            "estado_gestion": "'1'",
+                            "fecha_novedad": f"'{fecha_ayer}'"
+                            }
+                    
+                    columnas = ", ".join(valores.keys())
+                    valores_sql = ", ".join(valores.values())
+        
+                    sentencia = f"INSERT INTO {tabla} ({columnas}) VALUES ({valores_sql})"
+                    cur.execute(sentencia)
+                    contador += 1
+                conexion.commit()
+                print(sentencia)
+                print('valores insertados: ', contador)
+                print('en: ', nombre_proceso)
+        except Exception as e:
+            print(f'ocurrio un error en {nombre_proceso}:', e)        
     except Exception as e:
         print('Ocurrio un error al abrir el archivo excel')
 
@@ -493,43 +389,9 @@ def recorrer_formulario_filtrar():
                         print('tabla: ', tabla)
                         procesar_archivo_excel(tabla=tabla, nombre_proceso=nombre_proceso, col1=col1, col2=col2, col3=col3, col4=col4, col5=col5)
                         print('antes del exit.')
-                        print('tabla: ', tabla)
-                        print('nombre_proceso: ', nombre_proceso)
                         # exit()
     except Exception as e:
         logging.error(f'Error en la funcion: recorrer_formulario_filtrar: {e}')
-
-
-
-# def validar_descarga_archivo()
-#             print('hola3')
-#             iniciar_filtro(tupla_postformulario[0])
-#             time.sleep(10)
-#             no_hay_eventos = obtener_ruta_imagenes('no_hay_eventos.png')
-#             coordenadas_no_hay_eventos = obtener_coordenadas_imagen_pantalla(no_hay_eventos)
-#             if coordenadas_no_hay_eventos != 'error':
-#                 print(f'no hay eventos, nombre proceso: {nombre_proceso}')
-#                 logging.error(f'no hay eventos, nombre proceso: {nombre_proceso}')
-#                 ruta_captura = obtener_captura_pantalla('no_hay_eventos.png', 'screenshots')
-#                 mensaje_telegram('no hay eventos', ruta_captura, None, None, nombre_proceso, None, None)
-#                 logging.error(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
-#                 print(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
-#                 logging.error('Se cancela la ejecucion del proceso censel')
-#                 os.system("taskkill /f /im chrome.exe")
-#             else:
-#                 print('ejecuntando tupla_postforulario')
-#                 for img in tupla_postformulario:
-#                     iniciar_filtro(img)
-#                     if img == 'exportar_a_csv.png':
-#                         time.sleep(20)
-#                         if os.system("taskkill /f /im chrome.exe"):
-#                             mensaje_telegram('cerrar_chrome', None, None, None, None, None ,None)
-#                             #procesar_archivo_excel(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx', 'replica_registro_codigos_seguridad', nombre_proceso)
-#                             exit()
-#             # return
-
-
-
 
 def iniciar_sesion():
     try:

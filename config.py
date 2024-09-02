@@ -35,11 +35,14 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-# conexion = psycopg2.connect(
-#                     host='10.1.1.4',
-#                     port='5432',
-#                     database='gamble',
-#                     user='postgres',
-#                     password='gambleconsuerte'
-#                 )
+
+def conexion_postgres():
+    conexion = psycopg2.connect(
+                    host='10.1.1.4',
+                    port='5432',
+                    database='gamble',
+                    user='postgres',
+                    password='gambleconsuerte'
+                )
+    return conexion
 
