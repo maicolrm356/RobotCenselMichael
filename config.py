@@ -1,7 +1,7 @@
 import logging
 from datetime import datetime, timedelta
 import psycopg2
-
+import time
 
 #Hora_actual
 hora_actual = datetime.now().strftime("%I:%M %p").lstrip('0')
@@ -34,6 +34,14 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
+
+#tiempo
+inicio = time.time()
+
+#grabacion pantalla
+grabando = False
+hilo_grabacion = None
+
 
 
 def conexion_postgres():
