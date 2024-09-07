@@ -16,6 +16,7 @@ import glob
 import cv2
 import threading
 import pandas
+import io
 
 
 
@@ -41,11 +42,11 @@ tupla_postformulario = (
 
 horarios_procesos = [
     #nombre_proceso                 hora_ejecucion  hora_desde hora_hasta          codigo_alarma                    columnas_excel1    columnas_excel2      columnas_excel3         columnas_excel4    columnas_excel5     tabla                         
-    ('baterias1',  fecha_desde, fecha_hasta,'7:00 PM', '12:00', '7:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('baterias2',  fecha_desde, fecha_hasta,'7:00 PM','12:00',  '00:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('intrusion',  fecha_ayer,  fecha_hoy,  '11:52 AM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
-    ('fallo_test', fecha_ayer,  fecha_hoy,  '4:37 PM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
-    ('panico',     fecha_ayer,  fecha_ayer, '4:42 PM', '00:00', '23:50', 'PANICO SILENCIOSO / PANIC SILENCE - DUR',  'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades') #funciona
+    ('baterias1',  fecha_ayer, fecha_hoy,'12:02 PM', '12:00', '07:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('baterias2',  fecha_desde, fecha_hasta,'12:00 PM','00:00',  '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('intrusion',  fecha_ayer,  fecha_hoy,  '12:15 PM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
+    ('fallo_test', fecha_ayer,  fecha_hoy,  '1:03 PM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
+    ('panico',     fecha_ayer,  fecha_ayer, '1:57    PM', '00:00', '23:50', 'PANICO SILENCIOSO / PANIC SILENCE - DUR',  'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades') #funciona
     ] #hora_actual
 # count: nos devuelve el numero de veces que se repite un elemento
 # index: Nos devuelve la posicion de la primera aparicion de un elemento.c 
@@ -60,12 +61,12 @@ def mensaje_telegram(mensaje, ruta_imagen, nombre_imagen, carpeta, nombre_proces
         contenido_mensaje += (f"\n!! SE INICIA PROCESO DE CENSEL A LAS {hora_actual} !!")
         bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=contenido_mensaje)       
     elif mensaje == 'ingreso_censel':
-        contenido_mensaje += (f'\nSe ingresó al sistema de Censel correctamente')
+        contenido_mensaje += (f'\nSe ingresï¿½ al sistema de Censel correctamente')
         with open(ruta_imagen, 'rb') as img_file:
             img_data = img_file.read()
             bot.send_photo(chat_id=TELEGRAM_CHAT_ID, photo=img_data, caption=contenido_mensaje)
     elif mensaje == 'reportes_web':
-        contenido_mensaje += (f'\nSe ingresó a <b>Reportes Web</b> correctamente')
+        contenido_mensaje += (f'\nSe ingresï¿½ a <b>Reportes Web</b> correctamente')
         with open(ruta_imagen, 'rb') as img_file:
             img_data = img_file.read()
             bot.send_photo(chat_id=TELEGRAM_CHAT_ID, photo=img_data, caption=contenido_mensaje, parse_mode='HTML')
@@ -78,7 +79,7 @@ def mensaje_telegram(mensaje, ruta_imagen, nombre_imagen, carpeta, nombre_proces
             img_data = img_file.read()
         bot.send_photo(chat_id=TELEGRAM_CHAT_ID, photo=img_data, caption=contenido_mensaje, parse_mode='HTML')
     elif mensaje == img:
-        contenido_mensaje += (f'\nSe ingresó a <b>{mensaje}</b> correctamente')
+        contenido_mensaje += (f'\nSe ingresï¿½ a <b>{mensaje}</b> correctamente')
         with open(ruta_imagen, 'rb') as img_file:
             img_data = img_file.read()
         bot.send_photo(chat_id=TELEGRAM_CHAT_ID, photo=img_data, caption=contenido_mensaje, parse_mode='HTML')
@@ -121,7 +122,11 @@ def mensaje_telegram(mensaje, ruta_imagen, nombre_imagen, carpeta, nombre_proces
         bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=mensaje)
     elif mensaje == f'el proceso duro: {duracion_minutos} minutos':
         bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=mensaje)
-    elif mensaje == '----------------------------------------------------------------':
+    elif mensaje == '____________________________________________________________________':
+        bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=mensaje)
+    elif mensaje == f'Se elimina el archivo excel correctamente \n{archivo_excel}':
+        bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=mensaje)
+    elif mensaje == f'Ocurrio un error al intentar eliminar el archivo excel \n{archivo_excel}\n{e}':
         bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=mensaje)
 
 def obtener_coordenadas_imagen_pantalla(ruta_imagen):
@@ -258,23 +263,32 @@ def procesar_archivo_excel(descargas_path='~/Downloads', tabla=None, nombre_proc
         # leer archivo excel
         excel = pandas.read_excel(archivo_excel)
         
+        output = io.StringIO()
+        
         #seleccionar columna
         contador = 0
+        
+        estado_gestion = '1'
         if nombre_proceso == 'baterias1' or nombre_proceso == 'baterias2':
             cue_ncuenta = excel[col1]
             cue_ncuenta_sin_duplicados = set(cue_ncuenta)
+            tipo = 2
             try:
-                for valor in cue_ncuenta_sin_duplicados:
-                    sentencia = f"INSERT INTO {tabla} (codigo_seguridad, fecha, tipo) VALUES ('{valor}', '{fecha_ayer}', '2')"
-                    cur.execute(sentencia)
+                for codigo_seguridad in cue_ncuenta_sin_duplicados:
+                    output.write(f"{codigo_seguridad},{fecha_ayer},{tipo}\n")
                     contador += 1
+                    
+                output.seek(0)    
+                cur.copy_from(output, tabla, sep=',', columns=('codigo_seguridad','fecha','tipo'), null='NULL')
                 conexion.commit()
                 mensaje_telegram('insercion', None, None, None, nombre_proceso, None, None, None, None, contador, None)
             except Exception as e:
                 mensaje_telegram('error', None, None, None, nombre_proceso, None, None, e, None, None, None)
-                logging.error(f'Ocurrio un error al intentar insertar en la base de datos en el proceso: {nombre_proceso}: {e}')
+                logging.error(f'Ocurrio un error en procesar_archivo_excel en el proceso: {nombre_proceso}')
+                logging.error(f'{e}')
+                print(f'error: {e}')
         elif nombre_proceso == 'intrusion' or nombre_proceso == 'panico':
-            if nombre_proceso == 'intrusion': tipo_novedad = '1'
+            if nombre_proceso == 'intrusion': tipo_novedad = '1' 
             else: tipo_novedad = '2' #panico
             cue_ncuenta = excel[col1]
             rec_czona = excel[col2]
@@ -283,73 +297,70 @@ def procesar_archivo_excel(descargas_path='~/Downloads', tabla=None, nombre_proc
             _puerto = excel[col5]
             try:
                 for cue_ncuenta, rec_czona, rec_tFechaProceso, rec_tFechaRecepcion, _puerto in zip(cue_ncuenta, rec_czona, rec_tFechaProceso, rec_tFechaRecepcion, _puerto):
-                    #cue_ncuenta, rec_czona, rec_tFechaProceso, rec_tFechaRecepcion, _puerto, = valor
                     
-                    valores = {
-                        "nombre_novedad": f"'{nombre_proceso.upper()}'" if nombre_proceso else 'NULL',
-                        "tipo_novedad": f"'{tipo_novedad}'",
-                        "tipo_sensor": f"'{rec_czona}'" if str(rec_czona).strip() else 'NULL',
-                        "puerto_nov": f"'{_puerto}'" if str(_puerto).strip() else 'NULL',
-                        "fecha_proceso": f"'{rec_tFechaProceso}'" if str(rec_tFechaProceso).strip() else 'NULL',
-                        "fecha_recepcion": f"'{rec_tFechaRecepcion}'" if str(rec_tFechaRecepcion).strip() else 'NULL',
-                        "codigo_abonado": f"'{cue_ncuenta}'" if cue_ncuenta else 'NULL',
-                        "estado_gestion": "'1'",
-                        "fecha_novedad": f"'{fecha_ayer}'"
-                        }
+                    if rec_czona:
+                        rec_czona = rec_czona
+                    else:
+                        rec_czona = 'NULL'
                     
-                    columnas = ", ".join(valores.keys())
-                    valores_sql = ", ".join(valores.values())
-    
-                    sentencia = f"INSERT INTO {tabla} ({columnas}) VALUES ({valores_sql})"
-                    cur.execute(sentencia)
+                    output.write(f'{nombre_proceso.upper()},{tipo_novedad},{rec_czona},{_puerto},{rec_tFechaProceso},{rec_tFechaRecepcion},{cue_ncuenta},{estado_gestion},{fecha_ayer}\n')
                     contador += 1
+
+                output.seek(0)
+                cur.copy_from(output, tabla, sep=',', columns=('nombre_novedad', 'tipo_novedad', 'tipo_sensor', 'puerto_nov', 'fecha_proceso', 'fecha_recepcion', 'codigo_abonado', 'estado_gestion', 'fecha_novedad'), null='NULL')
                 conexion.commit()
                 mensaje_telegram('insercion', None, None, None, nombre_proceso, None, None, None, None, contador, None)
             except Exception as e:
                 mensaje_telegram('error', None, None, None, nombre_proceso, None, None, e, None, None, None)
+                print('Error:', e)
+                logging.error(f'Ocurrio un error en procesar_archivo_excel en el proceso: {nombre_proceso}')
+                logging.error(f'{e}')
         elif nombre_proceso == 'fallo_test':
             cue_ncuenta = excel[col1]
             rec_tFechaProceso = excel[col2]
             rec_tFechaRecepcion = excel[col3]
             tablaDatos = excel[col4]
+            tipo_novedad = 4
+            tipo_sensor = 0
+            
             try:    
                 for cue_ncuenta, rec_tFechaProceso, rec_tFechaRecepcion, tablaDatos in zip(cue_ncuenta, rec_tFechaProceso, rec_tFechaRecepcion, tablaDatos):
-                    valores = {
-                            "nombre_novedad": f"'{nombre_proceso.upper()}'" if nombre_proceso else 'NULL',
-                            "tipo_novedad": "'4'",
-                            "tipo_sensor": "'0'",
-                            "puerto_nov": f"'{tablaDatos}'" if str(tablaDatos).strip() else 'NULL',
-                            "fecha_proceso": f"'{rec_tFechaProceso}'" if str(rec_tFechaProceso).strip() else 'NULL',
-                            "fecha_recepcion": f"'{rec_tFechaRecepcion}'" if str(rec_tFechaRecepcion).strip() else 'NULL',
-                            "codigo_abonado": f"'{cue_ncuenta}'" if cue_ncuenta else 'NULL',
-                            "estado_gestion": "'1'",
-                            "fecha_novedad": f"'{fecha_ayer}'"
-                            }
                     
-                    columnas = ", ".join(valores.keys())
-                    valores_sql = ", ".join(valores.values())
-        
-                    sentencia = f"INSERT INTO {tabla} ({columnas}) VALUES ({valores_sql})"
-                    cur.execute(sentencia)
+                    output.write(f'{nombre_proceso.upper()},{tipo_novedad},{tipo_sensor},{tablaDatos},{rec_tFechaProceso},{rec_tFechaRecepcion},{cue_ncuenta},{estado_gestion},{fecha_ayer}\n')
                     contador += 1
+
+                output.seek(0)
+                cur.copy_from(output, tabla, sep=',', columns=('nombre_novedad', 'tipo_novedad', 'tipo_sensor', 'puerto_nov', 'fecha_proceso', 'fecha_recepcion', 'codigo_abonado', 'estado_gestion', 'fecha_novedad'), null='NULL')
                 conexion.commit()
                 mensaje_telegram('insercion', None, None, None, nombre_proceso, None, None, None, None, contador, None)
             except Exception as e:
-                    mensaje_telegram('error', None, None, None, nombre_proceso, None, None, e, None, None, None)
+                mensaje_telegram('error', None, None, None, nombre_proceso, None, None, e, None, None, None)
+                logging.error(f'Ocurrio un error en procesar_archivo_excel en el proceso: {nombre_proceso}')
+                logging.error(f'{e}')
+                print('Error:', e)
+                logging.error(f'Ocurrio un error en procesar_archivo_excel en el proceso: {nombre_proceso}')
+                logging.error(f'{e}')
     except Exception as e:
         mensaje_telegram('ocurrio un error al intentar abrir el archivo excel', None, None, None, None, None, None, e, archivo_excel, None, None)
     finally:
         cur.close()
         conexion.close()
+        output.close()
         mensaje_telegram('Se cierra la conexion a la base de datos y se finaliza el proceso correctamente', None, None, None, None, None, None, None, None, None, None)
         fin = time.time()
         duracion = fin-inicio
         duracion_minutos = round(duracion / 60, 2)
+        
+        try:
+            os.remove(archivo_excel)
+            mensaje_telegram(f'Se elimina el archivo excel correctamente \n{archivo_excel}', None, None, None, None, None, None, None, archivo_excel, None, None)
+        except Exception as e:
+            mensaje_telegram(f'Ocurrio un error al intentar eliminar el archivo excel \n{archivo_excel}\n{e}', None, None, None, None, None, None, e, archivo_excel, None, None)
         mensaje_telegram(f'el proceso duro: {duracion_minutos} minutos', None, None, None, None, None, None, None, None, None, None)
         #ruta_video = detener_grabacion()
         #ruta_video = obtener_ruta_imagenes('grabacion.mp4')
         #print('ruta de la grabacion: ', ruta_video)
-        mensaje_telegram('_____________________________________________________________________________________', None, None, None, None, None, None, None, None, None, None)
+        mensaje_telegram('____________________________________________________________________', None, None, None, None, None, None, None, None, None, None)
 
 def recorrer_formulario_filtrar():
     try:

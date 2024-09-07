@@ -53,4 +53,3 @@ def conexion_postgres():
                     password='gambleconsuerte'
                 )
     return conexion
-
