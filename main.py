@@ -19,8 +19,8 @@ import pandas
 import io
 
 
-intentos = 1
-maximos_intentos = 4
+# intentos = 1
+# maximos_intentos = 4
 
 tupla_inicar_sesion = (
             'cancelar_chrome.png',
@@ -44,10 +44,10 @@ tupla_postformulario = (
 horarios_procesos = [
     #nombre_proceso                 hora_ejecucion  hora_desde hora_hasta          codigo_alarma                    columnas_excel1    columnas_excel2      columnas_excel3         columnas_excel4    columnas_excel5     tabla                         
     ('baterias1',  fecha_ayer, fecha_hoy,'7:00 PM', '12:00', '07:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('baterias2',  fecha_desde, fecha_hasta,'10:33 AM','00:00',  '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('intrusion',  fecha_ayer,  fecha_hoy,  '7:05 AM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
-    ('fallo_test', fecha_ayer,  fecha_hoy,  '7:15 AM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
-    ('panico',     fecha_ayer,  fecha_ayer, '9:44 AM', '00:00', '23:50', 'PANICO SILENCIOSO / PANIC SILENCE - DUR',  'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades') #funciona
+    ('baterias2',  fecha_desde, fecha_hasta,'12:04 PM','00:00',  '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('intrusion',  fecha_ayer,  fecha_hoy,  '10:56 AM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
+    ('fallo_test', fecha_ayer,  fecha_hoy,  '8:42 AM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
+    ('panico',     fecha_ayer,  fecha_ayer, '8:48 AM', '00:00', '23:50', 'PANICO SILENCIOSO / PANIC SILENCE - DUR',  'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades') #funciona
     ] #hora_actual
 # count: nos devuelve el numero de veces que se repite un elemento
 # index: Nos devuelve la posicion de la primera aparicion de un elemento.c 
@@ -136,17 +136,17 @@ def iniciar_filtro(img, tupla=None):
             return True
         else:
             if tupla != 'iniciar_sesion':
-                while intentos <= maximos_intentos:
-                    print('intentos: ', intentos)
-                    print('maximo intentos:', maximos_intentos)
+                # while intentos <= maximos_intentos:
+                #     print('intentos: ', intentos)
+                #     print('maximo intentos:', maximos_intentos)
                     ruta_captura = obtener_captura_pantalla(img, 'screenshots')
                     ruta_captura = obtener_ruta_imagenes(ruta_captura)
                     msm_telegram(f'No se encontro la imagen: {img} en la pantalla. \nSe cierra el navegador y se inicia el proceso nuevamente.', ruta_captura)
-                    os.system("taskkill /im chrome.exe")
+                    os.system("taskkill /f /im chrome.exe")
                     time.sleep(2)
-                    intentos = intentos + 1
+                    # intentos = intentos + 1
                     iniciar_sesion()
-                msm_telegram(f'Se intenta el proceso {maximos_intentos} veces')
+                # msm_telegram(f'Se intenta el proceso {maximos_intentos} veces')
     except Exception as e:
         logging.error(f'Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: {e}')
         logging.error('Ocurrio un error en la funcion: iniciar_filtro.')
@@ -231,7 +231,6 @@ def procesar_archivo_excel(descargas_path='~/Downloads', tabla=None, nombre_proc
                     
                     output.write(f'{nombre_proceso.upper()},{tipo_novedad},{rec_czona},{_puerto},{rec_tFechaProceso},{rec_tFechaRecepcion},{cue_ncuenta},{estado_gestion},{fecha_ayer}\n')
                     contador += 1
-                    print(rec_czona)
                 output.seek(0)
                 cur.copy_from(output, tabla, sep=',', columns=('nombre_novedad', 'tipo_novedad', 'tipo_sensor', 'puerto_nov', 'fecha_proceso', 'fecha_recepcion', 'codigo_abonado', 'estado_gestion', 'fecha_novedad'), null='NULL')
                 conexion.commit()
@@ -298,6 +297,7 @@ def procesar_archivo_excel(descargas_path='~/Downloads', tabla=None, nombre_proc
 
 def recorrer_formulario_filtrar():
     try:
+        horario_encontrado = False
         pyautogui.press('tab')
         time.sleep(1)
         pyautogui.write(mes_y_ano, interval=0.1)
@@ -306,8 +306,8 @@ def recorrer_formulario_filtrar():
         pyautogui.press('tab')
         for nombre_proceso, fecha_desde, fecha_hasta, hora_ejecucion, hora_desde, hora_hasta, codigo_alarma, col1, col2, col3, col4, col5, tabla in horarios_procesos:
         # PROCESo 2
-            proceso = 1
             if hora_ejecucion == hora_actual:
+                horario_encontrado = True
                 logging.info(f'Proceso a ejecutar: {nombre_proceso}, Hora ejecucion: {hora_ejecucion}, Hora actual: {hora_actual}')
                 print('nombre_proceso:')
                 print('hora ejecucion:', hora_ejecucion)
@@ -336,16 +336,12 @@ def recorrer_formulario_filtrar():
                 time.sleep(20)                
                 break
             else:
-                proceso += 1
                 logging.error(f'El horario {hora_ejecucion} no coincide con la hora actual {hora_actual}')
                 print(f'El horario {hora_ejecucion} no coincide con la hora actual {hora_actual}')
                 msm_telegram(f'\n La hora de ejecucion: {hora_ejecucion} del proceso de {nombre_proceso} no coincide con la hora actual, favor validar.')
-        while proceso == 2:
-            print('proceso intentos: ', proceso)
-            msm_telegram(f'Se termina el proceso')
-            os.system("taskkill /im chrome.exe")
-            exit()
-        if iniciar_filtro('buscar.png'):
+        
+        if horario_encontrado == True:
+            iniciar_filtro('buscar.png')
             ruta_captura = obtener_captura_pantalla('filtrando_proceso.png', 'screenshots')
             msm_telegram(f'\n Se filtra el proceso de {nombre_proceso} al horario: {hora_ejecucion}')
             time.sleep(5)
@@ -359,14 +355,14 @@ def recorrer_formulario_filtrar():
                 logging.error(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
                 print(f'No se encontraron eventos para descargar el archivo excel en el proceso de {nombre_proceso}, mensaje enviado al telegram')
                 logging.error('Se cancela la ejecucion del proceso censel')
-                os.system("taskkill /im chrome.exe")
+                os.system("taskkill /f /im chrome.exe")
             else:
                 print('ejecuntando tupla_postforulario')
                 for img in tupla_postformulario:
                     iniciar_filtro(img)
                     if img == 'exportar_a_csv.png':
                         time.sleep(2)
-                        os.system("taskkill /im chrome.exe")
+                        os.system("taskkill /f /im chrome.exe")
                         print('Se finaliza el proceso en la pagina de censel y se cierra el navegador.')
                         msm_telegram(f'\n Se finaliza el proceso en la pagina de censel y se cierra el navegador. \n-Se inicia con el procesamiento de la informacion en el archivo excel')
                         print('nombre_proceso: ', nombre_proceso)
@@ -374,6 +370,10 @@ def recorrer_formulario_filtrar():
                         procesar_archivo_excel(tabla=tabla, nombre_proceso=nombre_proceso, col1=col1, col2=col2, col3=col3, col4=col4, col5=col5)
                         print('antes del exit.')
                         exit()
+        else: 
+            msm_telegram('Ningun horario es valido para ejecutar el proceso. \nSe cierra el navegador.')
+            os.system("taskkill /f /im chrome.exe")
+
     except Exception as e:
         logging.error(f'Error en la funcion: recorrer_formulario_filtrar: {e}')
 

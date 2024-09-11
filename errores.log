@@ -20256,3 +20256,821 @@ CONTEXT:  COPY replica_seg_control_novedades, línea 14, columna tipo_sensor: «
 2024-09-10 10:35:51,441 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
 2024-09-10 10:36:00,494 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
 2024-09-10 10:36:01,674 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-10 12:00:03,843 - INFO - SE INICIA PROCESO A LAS 12:00 PM
+2024-09-10 12:00:18,416 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png en la pantalla
+2024-09-10 12:00:18,423 - ERROR - <class 'Exception'>
+2024-09-10 12:00:18,423 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:00:19,546 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png en la pantalla
+2024-09-10 12:00:19,546 - ERROR - <class 'Exception'>
+2024-09-10 12:00:19,546 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:00:20,712 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-10 12:00:22,287 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-10 12:00:32,181 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 12:00:32,181 - ERROR - <class 'Exception'>
+2024-09-10 12:00:32,182 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:00:33,291 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 12:00:33,291 - ERROR - <class 'Exception'>
+2024-09-10 12:00:33,291 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:00:54,652 - INFO - Se inicia ingreso a reportes web
+2024-09-10 12:00:55,764 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-10 12:00:57,227 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-10 12:01:06,302 - INFO - Se inicia ingreso a reportes web
+2024-09-10 12:01:07,389 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png en la pantalla
+2024-09-10 12:01:07,389 - ERROR - <class 'Exception'>
+2024-09-10 12:01:07,389 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:01:07,391 - ERROR - Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: local variable 'intentos' referenced before assignment
+2024-09-10 12:01:07,391 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-09-10 12:01:07,391 - ERROR - Parametro recibido en iniciar_filtro: logo_reportes_web.png
+2024-09-10 12:01:07,391 - INFO - Se inicia ingreso a reportes web
+2024-09-10 12:01:08,500 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png en la pantalla
+2024-09-10 12:01:08,500 - ERROR - <class 'Exception'>
+2024-09-10 12:01:08,500 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:01:08,502 - ERROR - Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: local variable 'intentos' referenced before assignment
+2024-09-10 12:01:08,502 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-09-10 12:01:08,502 - ERROR - Parametro recibido en iniciar_filtro: eventos.png
+2024-09-10 12:01:08,502 - INFO - Se inicia ingreso a reportes web
+2024-09-10 12:01:09,630 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png en la pantalla
+2024-09-10 12:01:09,630 - ERROR - <class 'Exception'>
+2024-09-10 12:01:09,630 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:01:09,632 - ERROR - Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: local variable 'intentos' referenced before assignment
+2024-09-10 12:01:09,632 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-09-10 12:01:09,632 - ERROR - Parametro recibido en iniciar_filtro: reporte_eventos_por_fecha.png
+2024-09-10 12:01:09,632 - INFO - Se inicia ingreso a reportes web
+2024-09-10 12:01:10,714 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png en la pantalla
+2024-09-10 12:01:10,715 - ERROR - <class 'Exception'>
+2024-09-10 12:01:10,715 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:01:10,716 - ERROR - Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: local variable 'intentos' referenced before assignment
+2024-09-10 12:01:10,716 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-09-10 12:01:10,716 - ERROR - Parametro recibido en iniciar_filtro: filtros.png
+2024-09-10 12:01:14,832 - ERROR - El horario 7:00 PM no coincide con la hora actual 12:00 PM
+2024-09-10 12:01:15,189 - ERROR - El horario 10:33 AM no coincide con la hora actual 12:00 PM
+2024-09-10 12:01:15,503 - ERROR - El horario 7:05 AM no coincide con la hora actual 12:00 PM
+2024-09-10 12:01:15,848 - ERROR - El horario 7:15 AM no coincide con la hora actual 12:00 PM
+2024-09-10 12:01:16,203 - ERROR - El horario 9:44 AM no coincide con la hora actual 12:00 PM
+2024-09-10 12:04:03,561 - INFO - SE INICIA PROCESO A LAS 12:04 PM
+2024-09-10 12:04:17,850 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png en la pantalla
+2024-09-10 12:04:17,850 - ERROR - <class 'Exception'>
+2024-09-10 12:04:17,850 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:04:18,966 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png en la pantalla
+2024-09-10 12:04:18,967 - ERROR - <class 'Exception'>
+2024-09-10 12:04:18,967 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:04:20,101 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-10 12:04:21,546 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-10 12:04:31,318 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 12:04:31,318 - ERROR - <class 'Exception'>
+2024-09-10 12:04:31,318 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:04:32,408 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 12:04:32,408 - ERROR - <class 'Exception'>
+2024-09-10 12:04:32,408 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 12:04:53,756 - INFO - Se inicia ingreso a reportes web
+2024-09-10 12:04:54,878 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-10 12:04:56,344 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-10 12:05:05,074 - INFO - Se inicia ingreso a reportes web
+2024-09-10 12:05:06,203 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-10 12:05:07,615 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-10 12:05:16,719 - INFO - Se inicia ingreso a reportes web
+2024-09-10 12:05:17,848 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-10 12:05:19,043 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-10 12:05:26,435 - INFO - Se inicia ingreso a reportes web
+2024-09-10 12:05:27,549 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-10 12:05:28,755 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-10 12:05:35,956 - INFO - Se inicia ingreso a reportes web
+2024-09-10 12:05:37,067 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-10 12:05:38,267 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-10 12:05:49,867 - ERROR - El horario 7:00 PM no coincide con la hora actual 12:04 PM
+2024-09-10 12:05:50,176 - ERROR - El horario 10:33 AM no coincide con la hora actual 12:04 PM
+2024-09-10 12:05:50,495 - ERROR - El horario 7:05 AM no coincide con la hora actual 12:04 PM
+2024-09-10 12:05:50,863 - ERROR - El horario 7:15 AM no coincide con la hora actual 12:04 PM
+2024-09-10 12:05:51,163 - ERROR - El horario 9:44 AM no coincide con la hora actual 12:04 PM
+2024-09-10 13:59:46,674 - INFO - SE INICIA PROCESO A LAS 1:59 PM
+2024-09-10 14:00:01,459 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png en la pantalla
+2024-09-10 14:00:01,459 - ERROR - <class 'Exception'>
+2024-09-10 14:00:01,459 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:00:02,579 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png en la pantalla
+2024-09-10 14:00:02,579 - ERROR - <class 'Exception'>
+2024-09-10 14:00:02,579 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:00:03,741 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 14:00:03,741 - ERROR - <class 'Exception'>
+2024-09-10 14:00:03,742 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:00:04,869 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 14:00:04,870 - ERROR - <class 'Exception'>
+2024-09-10 14:00:04,870 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:00:06,005 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 14:00:06,006 - ERROR - <class 'Exception'>
+2024-09-10 14:00:06,006 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:00:27,327 - INFO - Se inicia ingreso a reportes web
+2024-09-10 14:00:28,456 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png en la pantalla
+2024-09-10 14:00:28,456 - ERROR - <class 'Exception'>
+2024-09-10 14:00:28,457 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:00:28,459 - ERROR - Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: local variable 'intentos' referenced before assignment
+2024-09-10 14:00:28,459 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-09-10 14:00:28,459 - ERROR - Parametro recibido en iniciar_filtro: logo_censel.png
+2024-09-10 14:00:28,459 - INFO - Se inicia ingreso a reportes web
+2024-09-10 14:00:29,582 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png en la pantalla
+2024-09-10 14:00:29,583 - ERROR - <class 'Exception'>
+2024-09-10 14:00:29,583 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:00:29,584 - ERROR - Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: local variable 'intentos' referenced before assignment
+2024-09-10 14:00:29,584 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-09-10 14:00:29,584 - ERROR - Parametro recibido en iniciar_filtro: logo_reportes_web.png
+2024-09-10 14:00:29,584 - INFO - Se inicia ingreso a reportes web
+2024-09-10 14:00:30,695 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png en la pantalla
+2024-09-10 14:00:30,695 - ERROR - <class 'Exception'>
+2024-09-10 14:00:30,695 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:00:30,697 - ERROR - Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: local variable 'intentos' referenced before assignment
+2024-09-10 14:00:30,697 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-09-10 14:00:30,697 - ERROR - Parametro recibido en iniciar_filtro: eventos.png
+2024-09-10 14:00:30,697 - INFO - Se inicia ingreso a reportes web
+2024-09-10 14:00:31,828 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png en la pantalla
+2024-09-10 14:00:31,828 - ERROR - <class 'Exception'>
+2024-09-10 14:00:31,828 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:00:31,829 - ERROR - Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: local variable 'intentos' referenced before assignment
+2024-09-10 14:00:31,829 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-09-10 14:00:31,829 - ERROR - Parametro recibido en iniciar_filtro: reporte_eventos_por_fecha.png
+2024-09-10 14:00:31,829 - INFO - Se inicia ingreso a reportes web
+2024-09-10 14:00:32,955 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png en la pantalla
+2024-09-10 14:00:32,955 - ERROR - <class 'Exception'>
+2024-09-10 14:00:32,955 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:00:32,956 - ERROR - Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: local variable 'intentos' referenced before assignment
+2024-09-10 14:00:32,956 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-09-10 14:00:32,956 - ERROR - Parametro recibido en iniciar_filtro: filtros.png
+2024-09-10 14:00:37,034 - ERROR - El horario 7:00 PM no coincide con la hora actual 1:59 PM
+2024-09-10 14:00:37,338 - ERROR - El horario 10:33 AM no coincide con la hora actual 1:59 PM
+2024-09-10 14:00:37,637 - INFO - Proceso a ejecutar: intrusion, Hora ejecucion: 1:59 PM, Hora actual: 1:59 PM
+2024-09-10 14:01:06,703 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png en la pantalla
+2024-09-10 14:01:06,703 - ERROR - <class 'Exception'>
+2024-09-10 14:01:06,703 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 14:01:06,705 - ERROR - Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: local variable 'intentos' referenced before assignment
+2024-09-10 14:01:06,705 - ERROR - Ocurrio un error en la funcion: iniciar_filtro.
+2024-09-10 14:01:06,705 - ERROR - Parametro recibido en iniciar_filtro: buscar.png
+2024-09-10 16:27:08,353 - INFO - SE INICIA PROCESO A LAS 4:27 PM
+2024-09-10 16:27:23,132 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png en la pantalla
+2024-09-10 16:27:23,132 - ERROR - <class 'Exception'>
+2024-09-10 16:27:23,132 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 16:27:24,263 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png en la pantalla
+2024-09-10 16:27:24,263 - ERROR - <class 'Exception'>
+2024-09-10 16:27:24,263 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 16:27:25,414 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-10 16:27:26,926 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-10 16:27:38,005 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 16:27:38,005 - ERROR - <class 'Exception'>
+2024-09-10 16:27:38,005 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 16:27:39,148 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 16:27:39,148 - ERROR - <class 'Exception'>
+2024-09-10 16:27:39,148 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 16:28:00,498 - INFO - Se inicia ingreso a reportes web
+2024-09-10 16:28:01,633 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-10 16:28:03,099 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-10 16:28:12,049 - INFO - Se inicia ingreso a reportes web
+2024-09-10 16:28:13,169 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-10 16:28:14,636 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-10 16:28:23,640 - INFO - Se inicia ingreso a reportes web
+2024-09-10 16:28:24,746 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-10 16:28:25,952 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-10 16:28:33,526 - INFO - Se inicia ingreso a reportes web
+2024-09-10 16:28:34,666 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-10 16:28:35,900 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-10 16:28:43,367 - INFO - Se inicia ingreso a reportes web
+2024-09-10 16:28:44,462 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-10 16:28:45,692 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-10 16:28:57,298 - ERROR - El horario 7:00 PM no coincide con la hora actual 4:27 PM
+2024-09-10 16:28:57,594 - ERROR - El horario 10:33 AM no coincide con la hora actual 4:27 PM
+2024-09-10 16:28:57,896 - INFO - Proceso a ejecutar: intrusion, Hora ejecucion: 4:27 PM, Hora actual: 4:27 PM
+2024-09-10 16:29:26,989 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-10 16:29:28,207 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-10 16:29:35,858 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-10 16:29:41,281 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-10 16:29:41,281 - ERROR - <class 'Exception'>
+2024-09-10 16:29:41,281 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 16:29:42,385 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-10 16:29:43,619 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-10 16:29:52,378 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-10 16:29:53,634 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-10 17:11:03,758 - INFO - SE INICIA PROCESO A LAS 5:11 PM
+2024-09-10 17:11:18,508 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png en la pantalla
+2024-09-10 17:11:18,511 - ERROR - <class 'Exception'>
+2024-09-10 17:11:18,511 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:11:19,627 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png en la pantalla
+2024-09-10 17:11:19,627 - ERROR - <class 'Exception'>
+2024-09-10 17:11:19,627 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:11:20,771 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-10 17:11:22,244 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-10 17:11:33,647 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 17:11:33,647 - ERROR - <class 'Exception'>
+2024-09-10 17:11:33,647 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:11:34,785 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 17:11:34,786 - ERROR - <class 'Exception'>
+2024-09-10 17:11:34,786 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:11:56,129 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:11:57,257 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png en la pantalla
+2024-09-10 17:11:57,257 - ERROR - <class 'Exception'>
+2024-09-10 17:11:57,257 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:11:57,536 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-10 17:12:02,779 - INFO - SE INICIA PROCESO A LAS 5:11 PM
+2024-09-10 17:12:16,667 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-10 17:12:18,162 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-10 17:12:28,147 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png en la pantalla
+2024-09-10 17:12:28,147 - ERROR - <class 'Exception'>
+2024-09-10 17:12:28,147 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:12:29,285 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-10 17:12:30,754 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-10 17:12:40,696 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 17:12:40,696 - ERROR - <class 'Exception'>
+2024-09-10 17:12:40,696 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:12:41,786 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 17:12:41,787 - ERROR - <class 'Exception'>
+2024-09-10 17:12:41,787 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:13:03,144 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:13:04,275 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-10 17:13:05,711 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-10 17:13:14,522 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:13:15,618 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-10 17:13:17,088 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-10 17:13:26,052 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:13:27,128 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-10 17:13:28,331 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-10 17:13:35,677 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:13:36,809 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-10 17:13:38,031 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-10 17:13:45,279 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:13:46,387 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-10 17:13:47,635 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-10 17:13:59,283 - ERROR - El horario 7:00 PM no coincide con la hora actual 5:11 PM
+2024-09-10 17:13:59,595 - INFO - Proceso a ejecutar: baterias2, Hora ejecucion: 5:11 PM, Hora actual: 5:11 PM
+2024-09-10 17:14:29,070 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-10 17:14:30,313 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-10 17:14:37,944 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-10 17:14:43,392 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-10 17:14:43,392 - ERROR - <class 'Exception'>
+2024-09-10 17:14:43,392 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:14:44,515 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-10 17:14:45,781 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-10 17:14:54,493 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-10 17:14:55,729 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-10 17:17:05,093 - INFO - SE INICIA PROCESO A LAS 5:17 PM
+2024-09-10 17:17:19,593 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-10 17:17:21,150 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-10 17:17:31,470 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-10 17:17:32,954 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-10 17:17:42,584 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-10 17:17:44,072 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-10 17:17:53,854 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 17:17:53,854 - ERROR - <class 'Exception'>
+2024-09-10 17:17:53,854 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:17:54,990 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 17:17:54,990 - ERROR - <class 'Exception'>
+2024-09-10 17:17:54,990 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:18:16,329 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:18:17,440 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-10 17:18:18,926 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-10 17:18:27,376 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:18:28,490 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-10 17:18:29,972 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-10 17:18:38,399 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:18:39,492 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-10 17:18:40,721 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-10 17:18:48,053 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:18:49,142 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-10 17:18:50,346 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-10 17:18:57,532 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:18:58,635 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-10 17:18:59,901 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-10 17:19:11,509 - ERROR - El horario 7:00 PM no coincide con la hora actual 5:17 PM
+2024-09-10 17:19:11,798 - ERROR - El horario 5:11 PM no coincide con la hora actual 5:17 PM
+2024-09-10 17:19:12,090 - INFO - Proceso a ejecutar: intrusion, Hora ejecucion: 5:17 PM, Hora actual: 5:17 PM
+2024-09-10 17:19:41,202 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-10 17:19:42,451 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-10 17:19:49,879 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-10 17:19:55,302 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-10 17:19:55,303 - ERROR - <class 'Exception'>
+2024-09-10 17:19:55,303 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:19:56,421 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-10 17:19:57,668 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-10 17:20:06,370 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-10 17:20:07,595 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-10 17:23:03,151 - INFO - SE INICIA PROCESO A LAS 5:23 PM
+2024-09-10 17:23:17,610 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-10 17:23:19,100 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-10 17:23:29,081 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-10 17:23:30,583 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-10 17:23:40,563 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-10 17:23:41,995 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-10 17:23:51,952 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 17:23:51,952 - ERROR - <class 'Exception'>
+2024-09-10 17:23:51,952 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:23:53,084 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 17:23:53,084 - ERROR - <class 'Exception'>
+2024-09-10 17:23:53,084 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:24:14,438 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:24:15,555 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-10 17:24:16,991 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-10 17:24:26,048 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:24:27,170 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-10 17:24:28,699 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-10 17:24:37,162 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:24:38,286 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-10 17:24:39,515 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-10 17:24:47,039 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:24:48,132 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-10 17:24:49,358 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-10 17:24:56,757 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:24:57,869 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-10 17:24:59,118 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-10 17:25:10,750 - ERROR - El horario 7:00 PM no coincide con la hora actual 5:23 PM
+2024-09-10 17:25:11,062 - ERROR - El horario 5:11 PM no coincide con la hora actual 5:23 PM
+2024-09-10 17:25:11,359 - ERROR - El horario 5:17 PM no coincide con la hora actual 5:23 PM
+2024-09-10 17:25:11,658 - INFO - Proceso a ejecutar: fallo_test, Hora ejecucion: 5:23 PM, Hora actual: 5:23 PM
+2024-09-10 17:25:40,975 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-10 17:25:42,244 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-10 17:25:50,082 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-10 17:25:55,528 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-10 17:25:55,528 - ERROR - <class 'Exception'>
+2024-09-10 17:25:55,528 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:25:56,646 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-10 17:25:57,906 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-10 17:26:06,632 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-10 17:26:07,868 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-10 17:30:03,288 - INFO - SE INICIA PROCESO A LAS 5:30 PM
+2024-09-10 17:30:18,086 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-10 17:30:19,613 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-10 17:30:29,417 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-10 17:30:30,906 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-10 17:30:40,728 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-10 17:30:42,229 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-10 17:30:51,775 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 17:30:51,775 - ERROR - <class 'Exception'>
+2024-09-10 17:30:51,775 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:30:52,891 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 17:30:52,891 - ERROR - <class 'Exception'>
+2024-09-10 17:30:52,891 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:31:14,220 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:31:15,346 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-10 17:31:16,821 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-10 17:31:25,241 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:31:26,354 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-10 17:31:27,764 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-10 17:31:36,144 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:31:37,244 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-10 17:31:38,477 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-10 17:31:46,055 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:31:47,170 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-10 17:31:48,403 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-10 17:31:55,791 - INFO - Se inicia ingreso a reportes web
+2024-09-10 17:31:56,882 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-10 17:31:58,145 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-10 17:32:09,800 - ERROR - El horario 7:00 PM no coincide con la hora actual 5:30 PM
+2024-09-10 17:32:10,100 - ERROR - El horario 5:11 PM no coincide con la hora actual 5:30 PM
+2024-09-10 17:32:10,397 - ERROR - El horario 5:17 PM no coincide con la hora actual 5:30 PM
+2024-09-10 17:32:10,693 - ERROR - El horario 5:23 PM no coincide con la hora actual 5:30 PM
+2024-09-10 17:32:10,992 - INFO - Proceso a ejecutar: panico, Hora ejecucion: 5:30 PM, Hora actual: 5:30 PM
+2024-09-10 17:32:40,467 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-10 17:32:41,732 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-10 17:32:49,466 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-10 17:32:54,919 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-10 17:32:54,919 - ERROR - <class 'Exception'>
+2024-09-10 17:32:54,919 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 17:32:56,004 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-10 17:32:57,241 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-10 17:33:05,822 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-10 17:33:07,036 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-10 19:00:03,779 - INFO - SE INICIA PROCESO A LAS 7:00 PM
+2024-09-10 19:00:18,542 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=74, top=39, width=24, height=26)
+2024-09-10 19:00:19,918 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-10 19:00:30,033 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-10 19:00:31,421 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-10 19:00:41,805 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-10 19:00:43,119 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-10 19:00:53,364 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 19:00:53,364 - ERROR - <class 'Exception'>
+2024-09-10 19:00:53,364 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 19:00:54,446 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 19:00:54,446 - ERROR - <class 'Exception'>
+2024-09-10 19:00:54,446 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 19:01:15,794 - INFO - Se inicia ingreso a reportes web
+2024-09-10 19:01:16,908 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png en la pantalla
+2024-09-10 19:01:16,909 - ERROR - <class 'Exception'>
+2024-09-10 19:01:16,909 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 19:01:17,167 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-10 19:01:22,149 - INFO - SE INICIA PROCESO A LAS 7:00 PM
+2024-09-10 19:01:36,066 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-10 19:01:37,416 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-10 19:01:47,555 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png en la pantalla
+2024-09-10 19:01:47,555 - ERROR - <class 'Exception'>
+2024-09-10 19:01:47,555 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 19:01:48,661 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-10 19:01:49,974 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-10 19:02:00,318 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-10 19:02:00,318 - ERROR - <class 'Exception'>
+2024-09-10 19:02:00,318 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 19:02:01,412 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-10 19:02:01,412 - ERROR - <class 'Exception'>
+2024-09-10 19:02:01,412 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 19:02:22,752 - INFO - Se inicia ingreso a reportes web
+2024-09-10 19:02:23,844 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-10 19:02:25,218 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-10 19:02:34,142 - INFO - Se inicia ingreso a reportes web
+2024-09-10 19:02:35,231 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-10 19:02:36,589 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-10 19:02:45,483 - INFO - Se inicia ingreso a reportes web
+2024-09-10 19:02:46,589 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-10 19:02:47,806 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-10 19:02:55,316 - INFO - Se inicia ingreso a reportes web
+2024-09-10 19:02:56,426 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-10 19:02:57,632 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-10 19:03:05,013 - INFO - Se inicia ingreso a reportes web
+2024-09-10 19:03:06,125 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-10 19:03:07,335 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-10 19:03:19,074 - INFO - Proceso a ejecutar: baterias1, Hora ejecucion: 7:00 PM, Hora actual: 7:00 PM
+2024-09-10 19:03:48,530 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-10 19:03:49,760 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-10 19:03:57,407 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-10 19:04:02,836 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-10 19:04:02,836 - ERROR - <class 'Exception'>
+2024-09-10 19:04:02,836 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-10 19:04:03,922 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-10 19:04:05,131 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-10 19:04:14,253 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-10 19:04:15,476 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-11 08:25:06,813 - INFO - SE INICIA PROCESO A LAS 8:25 AM
+2024-09-11 08:25:22,121 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=74, top=39, width=24, height=26)
+2024-09-11 08:25:23,801 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-11 08:25:34,625 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png en la pantalla
+2024-09-11 08:25:34,630 - ERROR - <class 'Exception'>
+2024-09-11 08:25:34,630 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:25:35,749 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 08:25:35,749 - ERROR - <class 'Exception'>
+2024-09-11 08:25:35,749 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:25:36,819 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-11 08:25:36,819 - ERROR - <class 'Exception'>
+2024-09-11 08:25:36,819 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:25:37,959 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 08:25:37,959 - ERROR - <class 'Exception'>
+2024-09-11 08:25:37,959 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:25:59,384 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:26:00,598 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-11 08:26:01,987 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-11 08:26:10,310 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:26:11,429 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-11 08:26:12,765 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-11 08:26:21,420 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:26:22,536 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-11 08:26:23,756 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-11 08:26:31,245 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:26:32,384 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-11 08:26:33,602 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-11 08:26:41,044 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:26:42,149 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-11 08:26:43,338 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-11 08:26:55,132 - ERROR - El horario 7:00 PM no coincide con la hora actual 8:25 AM
+2024-09-11 08:26:55,467 - ERROR - El horario 8:25 PM no coincide con la hora actual 8:25 AM
+2024-09-11 08:26:55,773 - ERROR - El horario 8:37 AM no coincide con la hora actual 8:25 AM
+2024-09-11 08:26:56,095 - ERROR - El horario 8:42 AM no coincide con la hora actual 8:25 AM
+2024-09-11 08:26:56,399 - ERROR - El horario 8:48 AM no coincide con la hora actual 8:25 AM
+2024-09-11 08:26:57,818 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-11 08:26:59,057 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-11 08:27:06,773 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-11 08:27:12,208 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-11 08:27:12,208 - ERROR - <class 'Exception'>
+2024-09-11 08:27:12,208 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:27:13,308 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-11 08:27:14,511 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-11 08:27:23,253 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-11 08:27:24,478 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-11 08:37:01,730 - INFO - SE INICIA PROCESO A LAS 8:37 AM
+2024-09-11 08:37:16,087 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png en la pantalla
+2024-09-11 08:37:16,088 - ERROR - <class 'Exception'>
+2024-09-11 08:37:16,088 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:37:17,195 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png en la pantalla
+2024-09-11 08:37:17,195 - ERROR - <class 'Exception'>
+2024-09-11 08:37:17,195 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:37:18,289 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 08:37:18,289 - ERROR - <class 'Exception'>
+2024-09-11 08:37:18,290 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:37:19,386 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-11 08:37:19,387 - ERROR - <class 'Exception'>
+2024-09-11 08:37:19,387 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:37:20,528 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 08:37:20,529 - ERROR - <class 'Exception'>
+2024-09-11 08:37:20,529 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:37:41,862 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:37:42,950 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png en la pantalla
+2024-09-11 08:37:42,951 - ERROR - <class 'Exception'>
+2024-09-11 08:37:42,951 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:37:43,082 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-11 08:37:47,141 - INFO - SE INICIA PROCESO A LAS 8:37 AM
+2024-09-11 08:38:01,073 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-11 08:38:02,466 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-11 08:38:13,372 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-11 08:38:14,777 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-11 08:38:25,288 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-11 08:38:26,639 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-11 08:38:36,963 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-11 08:38:36,963 - ERROR - <class 'Exception'>
+2024-09-11 08:38:36,963 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:38:38,061 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 08:38:38,061 - ERROR - <class 'Exception'>
+2024-09-11 08:38:38,061 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:38:59,411 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:39:00,515 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-11 08:39:01,949 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-11 08:39:10,997 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:39:12,095 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-11 08:39:13,486 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-11 08:39:22,533 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:39:23,616 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-11 08:39:24,804 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-11 08:39:32,360 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:39:33,482 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-11 08:39:34,687 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-11 08:39:42,154 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:39:43,241 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-11 08:39:44,472 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-11 08:39:56,168 - ERROR - El horario 7:00 PM no coincide con la hora actual 8:37 AM
+2024-09-11 08:39:56,475 - ERROR - El horario 8:25 PM no coincide con la hora actual 8:37 AM
+2024-09-11 08:39:56,784 - INFO - Proceso a ejecutar: intrusion, Hora ejecucion: 8:37 AM, Hora actual: 8:37 AM
+2024-09-11 08:40:25,839 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-11 08:40:27,072 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-11 08:40:34,755 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-11 08:40:40,181 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-11 08:40:40,181 - ERROR - <class 'Exception'>
+2024-09-11 08:40:40,181 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:40:41,291 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-11 08:40:42,519 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-11 08:40:51,437 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-11 08:40:52,651 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-11 08:42:01,520 - INFO - SE INICIA PROCESO A LAS 8:42 AM
+2024-09-11 08:42:16,241 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-11 08:42:17,675 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-11 08:42:28,542 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-11 08:42:29,937 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-11 08:42:40,484 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-11 08:42:41,872 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-11 08:42:52,148 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-11 08:42:52,148 - ERROR - <class 'Exception'>
+2024-09-11 08:42:52,148 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:42:53,270 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 08:42:53,270 - ERROR - <class 'Exception'>
+2024-09-11 08:42:53,270 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:43:14,608 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:43:15,719 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-11 08:43:17,149 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-11 08:43:26,071 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:43:27,189 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-11 08:43:28,560 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-11 08:43:37,608 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:43:38,698 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-11 08:43:39,903 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-11 08:43:47,406 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:43:48,540 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-11 08:43:49,735 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-11 08:43:57,155 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:43:58,244 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-11 08:43:59,457 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-11 08:44:11,312 - ERROR - El horario 7:00 PM no coincide con la hora actual 8:42 AM
+2024-09-11 08:44:11,621 - ERROR - El horario 8:25 PM no coincide con la hora actual 8:42 AM
+2024-09-11 08:44:11,999 - ERROR - El horario 8:37 AM no coincide con la hora actual 8:42 AM
+2024-09-11 08:44:12,307 - INFO - Proceso a ejecutar: fallo_test, Hora ejecucion: 8:42 AM, Hora actual: 8:42 AM
+2024-09-11 08:44:41,621 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-11 08:44:42,847 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-11 08:44:50,546 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-11 08:44:56,088 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-11 08:44:56,088 - ERROR - <class 'Exception'>
+2024-09-11 08:44:56,088 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:44:57,187 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-11 08:44:58,405 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-11 08:45:07,270 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-11 08:45:08,461 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-11 08:48:01,449 - INFO - SE INICIA PROCESO A LAS 8:48 AM
+2024-09-11 08:48:16,200 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-11 08:48:17,605 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-11 08:48:43,703 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-11 08:48:45,098 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-11 08:48:59,391 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-11 08:49:00,764 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-11 08:49:10,955 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-11 08:49:10,955 - ERROR - <class 'Exception'>
+2024-09-11 08:49:10,955 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:49:12,080 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 08:49:12,080 - ERROR - <class 'Exception'>
+2024-09-11 08:49:12,080 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:49:33,415 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:49:34,509 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-11 08:49:35,900 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-11 08:49:44,647 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:49:45,768 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-11 08:49:47,181 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-11 08:49:55,955 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:49:57,045 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-11 08:49:58,238 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-11 08:50:05,909 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:50:07,025 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-11 08:50:08,239 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-11 08:50:15,655 - INFO - Se inicia ingreso a reportes web
+2024-09-11 08:50:16,738 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-11 08:50:17,979 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-11 08:50:29,661 - ERROR - El horario 7:00 PM no coincide con la hora actual 8:48 AM
+2024-09-11 08:50:29,967 - ERROR - El horario 8:25 PM no coincide con la hora actual 8:48 AM
+2024-09-11 08:50:30,276 - ERROR - El horario 8:37 AM no coincide con la hora actual 8:48 AM
+2024-09-11 08:50:30,587 - ERROR - El horario 8:42 AM no coincide con la hora actual 8:48 AM
+2024-09-11 08:50:30,894 - INFO - Proceso a ejecutar: panico, Hora ejecucion: 8:48 AM, Hora actual: 8:48 AM
+2024-09-11 08:51:00,365 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-11 08:51:01,572 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-11 08:51:09,248 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-11 08:51:14,673 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-11 08:51:14,673 - ERROR - <class 'Exception'>
+2024-09-11 08:51:14,673 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 08:51:15,795 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-11 08:51:17,008 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-11 08:51:25,696 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-11 08:51:26,937 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-11 09:00:03,266 - INFO - SE INICIA PROCESO A LAS 9:00 AM
+2024-09-11 09:00:17,615 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-11 09:00:19,088 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-11 09:00:29,803 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-11 09:00:31,150 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-11 09:00:41,485 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-11 09:00:42,841 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-11 09:00:53,157 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-11 09:00:53,157 - ERROR - <class 'Exception'>
+2024-09-11 09:00:53,157 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 09:00:54,264 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 09:00:54,264 - ERROR - <class 'Exception'>
+2024-09-11 09:00:54,264 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 09:01:15,604 - INFO - Se inicia ingreso a reportes web
+2024-09-11 09:01:16,710 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-11 09:01:18,129 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-11 09:01:27,161 - INFO - Se inicia ingreso a reportes web
+2024-09-11 09:01:28,242 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-11 09:01:29,669 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-11 09:01:38,685 - INFO - Se inicia ingreso a reportes web
+2024-09-11 09:01:39,760 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-11 09:01:40,947 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-11 09:01:48,562 - INFO - Se inicia ingreso a reportes web
+2024-09-11 09:01:49,682 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-11 09:01:50,895 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-11 09:01:58,303 - INFO - Se inicia ingreso a reportes web
+2024-09-11 09:01:59,407 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-11 09:02:00,619 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-11 09:02:12,471 - ERROR - El horario 7:00 PM no coincide con la hora actual 9:00 AM
+2024-09-11 09:02:12,771 - ERROR - El horario 8:25 PM no coincide con la hora actual 9:00 AM
+2024-09-11 09:02:13,093 - ERROR - El horario 8:37 AM no coincide con la hora actual 9:00 AM
+2024-09-11 09:02:13,393 - ERROR - El horario 8:42 AM no coincide con la hora actual 9:00 AM
+2024-09-11 09:02:13,693 - ERROR - El horario 8:48 AM no coincide con la hora actual 9:00 AM
+2024-09-11 09:02:15,130 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-11 09:02:16,325 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-11 09:02:24,100 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-11 09:02:29,619 - ERROR - No se encontro la imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-11 09:02:29,619 - ERROR - <class 'Exception'>
+2024-09-11 09:02:29,619 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 09:02:30,696 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-11 09:02:31,926 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-11 09:02:40,799 - INFO - Ruta imagen C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-11 09:02:42,047 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-11 10:40:36,371 - INFO - SE INICIA PROCESO A LAS 10:40 AM
+2024-09-11 10:40:51,038 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-11 10:40:52,430 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-11 10:41:03,344 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-11 10:41:04,710 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-11 10:41:15,275 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-11 10:41:16,600 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-11 10:41:26,873 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-11 10:41:26,873 - ERROR - <class 'Exception'>
+2024-09-11 10:41:26,873 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 10:41:27,981 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 10:41:27,981 - ERROR - <class 'Exception'>
+2024-09-11 10:41:27,981 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 10:41:49,325 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:41:50,428 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-11 10:41:51,780 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-11 10:42:00,679 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:42:01,764 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-11 10:42:03,168 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-11 10:42:12,293 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:42:13,364 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-11 10:42:14,545 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-11 10:42:22,274 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:42:23,375 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-11 10:42:24,552 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-11 10:42:32,132 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:42:33,204 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-11 10:42:34,421 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-11 10:42:46,214 - ERROR - El horario 7:00 PM no coincide con la hora actual 10:40 AM
+2024-09-11 10:42:46,522 - ERROR - El horario 8:25 PM no coincide con la hora actual 10:40 AM
+2024-09-11 10:42:46,815 - ERROR - El horario 8:37 AM no coincide con la hora actual 10:40 AM
+2024-09-11 10:42:47,117 - ERROR - El horario 8:42 AM no coincide con la hora actual 10:40 AM
+2024-09-11 10:42:47,433 - ERROR - El horario 8:48 AM no coincide con la hora actual 10:40 AM
+2024-09-11 10:42:48,795 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-11 10:42:50,008 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-11 10:42:57,632 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-11 10:43:03,015 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-11 10:43:03,015 - ERROR - <class 'Exception'>
+2024-09-11 10:43:03,015 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 10:43:04,104 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-11 10:43:05,326 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-11 10:43:13,987 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-11 10:43:15,195 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
+2024-09-11 10:43:59,997 - INFO - SE INICIA PROCESO A LAS 10:43 AM
+2024-09-11 10:44:14,183 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-11 10:44:15,502 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-11 10:44:25,917 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-11 10:44:27,240 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-11 10:44:37,556 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-11 10:44:38,896 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-11 10:44:49,179 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-11 10:44:49,179 - ERROR - <class 'Exception'>
+2024-09-11 10:44:49,179 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 10:44:50,275 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 10:44:50,275 - ERROR - <class 'Exception'>
+2024-09-11 10:44:50,275 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 10:45:11,635 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:45:12,715 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-11 10:45:14,073 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-11 10:45:22,967 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:45:24,056 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-11 10:45:25,414 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-11 10:45:34,373 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:45:35,445 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-11 10:45:36,642 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-11 10:45:44,010 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:45:45,080 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-11 10:45:46,272 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-11 10:45:53,489 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:45:54,577 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-11 10:45:55,771 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-11 10:46:07,104 - ERROR - El horario 7:00 PM no coincide con la hora actual 10:43 AM
+2024-09-11 10:46:07,428 - ERROR - El horario 8:25 PM no coincide con la hora actual 10:43 AM
+2024-09-11 10:46:07,767 - ERROR - El horario 8:37 AM no coincide con la hora actual 10:43 AM
+2024-09-11 10:46:08,093 - ERROR - El horario 8:42 AM no coincide con la hora actual 10:43 AM
+2024-09-11 10:46:08,489 - ERROR - El horario 8:48 AM no coincide con la hora actual 10:43 AM
+2024-09-11 10:47:33,008 - INFO - SE INICIA PROCESO A LAS 10:47 AM
+2024-09-11 10:47:47,263 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png en la pantalla
+2024-09-11 10:47:47,263 - ERROR - <class 'Exception'>
+2024-09-11 10:47:47,263 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 10:47:48,351 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-11 10:47:49,681 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-11 10:48:00,493 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-11 10:48:01,870 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-11 10:48:12,135 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png. Coordenadas: Box(left=693, top=164, width=102, height=42)
+2024-09-11 10:48:13,327 - INFO - Captura de pantalla exitosa --> Nombre: abandonar.png --> carpeta: screenshots
+2024-09-11 10:48:22,063 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-11 10:48:23,391 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-11 10:48:54,020 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:48:55,095 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-11 10:48:56,488 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-11 10:49:05,482 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:49:06,550 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-11 10:49:07,928 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-11 10:49:16,803 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:49:17,884 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-11 10:49:19,069 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-11 10:49:26,581 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:49:27,680 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-11 10:49:28,864 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-11 10:49:36,283 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:49:37,392 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-11 10:49:38,599 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-11 10:49:50,115 - ERROR - El horario 7:00 PM no coincide con la hora actual 10:47 AM
+2024-09-11 10:49:50,424 - ERROR - El horario 8:25 PM no coincide con la hora actual 10:47 AM
+2024-09-11 10:49:50,734 - ERROR - El horario 8:37 AM no coincide con la hora actual 10:47 AM
+2024-09-11 10:49:51,027 - ERROR - El horario 8:42 AM no coincide con la hora actual 10:47 AM
+2024-09-11 10:49:51,328 - ERROR - El horario 8:48 AM no coincide con la hora actual 10:47 AM
+2024-09-11 10:56:09,119 - INFO - SE INICIA PROCESO A LAS 10:56 AM
+2024-09-11 10:56:23,406 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\cancelar_chrome.png. Coordenadas: Box(left=1337, top=69, width=24, height=26)
+2024-09-11 10:56:24,785 - INFO - Captura de pantalla exitosa --> Nombre: cancelar_chrome.png --> carpeta: screenshots
+2024-09-11 10:56:35,844 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eliminar_sesion.png. Coordenadas: Box(left=839, top=377, width=125, height=38)
+2024-09-11 10:56:37,147 - INFO - Captura de pantalla exitosa --> Nombre: eliminar_sesion.png --> carpeta: screenshots
+2024-09-11 10:56:47,757 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png. Coordenadas: Box(left=562, top=341, width=388, height=59)
+2024-09-11 10:56:49,070 - INFO - Captura de pantalla exitosa --> Nombre: email.png --> carpeta: screenshots
+2024-09-11 10:56:59,362 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\abandonar.png en la pantalla
+2024-09-11 10:56:59,362 - ERROR - <class 'Exception'>
+2024-09-11 10:56:59,362 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 10:57:00,446 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\email.png en la pantalla
+2024-09-11 10:57:00,446 - ERROR - <class 'Exception'>
+2024-09-11 10:57:00,446 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 10:57:21,793 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:57:22,909 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_censel.png. Coordenadas: Box(left=1268, top=79, width=90, height=44)
+2024-09-11 10:57:24,252 - INFO - Captura de pantalla exitosa --> Nombre: logo_censel.png --> carpeta: screenshots
+2024-09-11 10:57:33,390 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:57:34,485 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\logo_reportes_web.png. Coordenadas: Box(left=15, top=77, width=66, height=68)
+2024-09-11 10:57:35,887 - INFO - Captura de pantalla exitosa --> Nombre: logo_reportes_web.png --> carpeta: screenshots
+2024-09-11 10:57:45,177 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:57:46,259 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\eventos.png. Coordenadas: Box(left=9, top=129, width=74, height=20)
+2024-09-11 10:57:47,465 - INFO - Captura de pantalla exitosa --> Nombre: eventos.png --> carpeta: screenshots
+2024-09-11 10:57:59,834 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:58:00,939 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\reporte_eventos_por_fecha.png. Coordenadas: Box(left=37, top=150, width=151, height=18)
+2024-09-11 10:58:02,149 - INFO - Captura de pantalla exitosa --> Nombre: reporte_eventos_por_fecha.png --> carpeta: screenshots
+2024-09-11 10:58:12,019 - INFO - Se inicia ingreso a reportes web
+2024-09-11 10:58:13,107 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\filtros.png. Coordenadas: Box(left=444, top=133, width=52, height=16)
+2024-09-11 10:58:14,314 - INFO - Captura de pantalla exitosa --> Nombre: filtros.png --> carpeta: screenshots
+2024-09-11 10:58:25,993 - ERROR - El horario 7:00 PM no coincide con la hora actual 10:56 AM
+2024-09-11 10:58:26,305 - ERROR - El horario 8:25 PM no coincide con la hora actual 10:56 AM
+2024-09-11 10:58:26,612 - INFO - Proceso a ejecutar: intrusion, Hora ejecucion: 10:56 AM, Hora actual: 10:56 AM
+2024-09-11 10:58:55,656 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\buscar.png. Coordenadas: Box(left=887, top=564, width=79, height=26)
+2024-09-11 10:58:56,832 - INFO - Captura de pantalla exitosa --> Nombre: buscar.png --> carpeta: screenshots
+2024-09-11 10:59:04,606 - INFO - Captura de pantalla exitosa --> Nombre: filtrando_proceso.png --> carpeta: screenshots
+2024-09-11 10:59:10,003 - ERROR - No se encontro la imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\no_hay_eventos.png en la pantalla
+2024-09-11 10:59:10,003 - ERROR - <class 'Exception'>
+2024-09-11 10:59:10,003 - ERROR - Error en la funcion: obtener_coordenadas_imagen_pantalla.
+2024-09-11 10:59:11,089 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar.png. Coordenadas: Box(left=1281, top=135, width=54, height=14)
+2024-09-11 10:59:12,294 - INFO - Captura de pantalla exitosa --> Nombre: exportar.png --> carpeta: screenshots
+2024-09-11 10:59:20,971 - INFO - Ruta imagen c:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael\img\exportar_a_csv.png. Coordenadas: Box(left=1159, top=195, width=174, height=26)
+2024-09-11 10:59:22,186 - INFO - Captura de pantalla exitosa --> Nombre: exportar_a_csv.png --> carpeta: screenshots
