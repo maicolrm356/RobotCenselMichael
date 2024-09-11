@@ -8,13 +8,10 @@ import telebot
 import os
 import numpy as np
 from config import *
-import win32com.client
 import warnings
 warnings.simplefilter("ignore", UserWarning)
 from psycopg2 import sql, extras
 import glob
-import cv2
-import threading
 import pandas
 import io
 
@@ -43,8 +40,8 @@ tupla_postformulario = (
 
 horarios_procesos = [
     #nombre_proceso                 hora_ejecucion  hora_desde hora_hasta          codigo_alarma                    columnas_excel1    columnas_excel2      columnas_excel3         columnas_excel4    columnas_excel5     tabla                         
-    ('baterias1',  fecha_ayer, fecha_hoy,'7:00 PM', '12:00', '07:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('baterias2',  fecha_desde, fecha_hasta,'12:04 PM','00:00',  '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('baterias1',  fecha_ayer, fecha_hoy,   '7:00 PM', '12:00', '07:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
+    ('baterias2',  fecha_desde, fecha_hasta,'3:13 PM','00:00',  '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
     ('intrusion',  fecha_ayer,  fecha_hoy,  '10:56 AM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
     ('fallo_test', fecha_ayer,  fecha_hoy,  '8:42 AM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
     ('panico',     fecha_ayer,  fecha_ayer, '8:48 AM', '00:00', '23:50', 'PANICO SILENCIOSO / PANIC SILENCE - DUR',  'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades') #funciona
@@ -136,17 +133,12 @@ def iniciar_filtro(img, tupla=None):
             return True
         else:
             if tupla != 'iniciar_sesion':
-                # while intentos <= maximos_intentos:
-                #     print('intentos: ', intentos)
-                #     print('maximo intentos:', maximos_intentos)
                     ruta_captura = obtener_captura_pantalla(img, 'screenshots')
                     ruta_captura = obtener_ruta_imagenes(ruta_captura)
                     msm_telegram(f'No se encontro la imagen: {img} en la pantalla. \nSe cierra el navegador y se inicia el proceso nuevamente.', ruta_captura)
                     os.system("taskkill /f /im chrome.exe")
                     time.sleep(2)
-                    # intentos = intentos + 1
                     iniciar_sesion()
-                # msm_telegram(f'Se intenta el proceso {maximos_intentos} veces')
     except Exception as e:
         logging.error(f'Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: {e}')
         logging.error('Ocurrio un error en la funcion: iniciar_filtro.')
@@ -373,17 +365,13 @@ def recorrer_formulario_filtrar():
         else: 
             msm_telegram('Ningun horario es valido para ejecutar el proceso. \nSe cierra el navegador.')
             os.system("taskkill /f /im chrome.exe")
-
+            exit()
     except Exception as e:
         logging.error(f'Error en la funcion: recorrer_formulario_filtrar: {e}')
 
 def iniciar_sesion():
     try:
-        #grabar pantalla
-        #iniciar_grabacion()
-        # ABRIR NAVEGADOR
         logging.info (f"SE INICIA PROCESO A LAS {hora_actual}")
-        # mensaje_telegram('inicio', None, None, None, None, None, None, None, None, None, None)
         msm_telegram(f"!! SE INICIA PROCESO DE CENSEL A LAS {hora_actual} !!")
         pyautogui.hotkey('win', 'r')
         time.sleep(2)
@@ -429,7 +417,6 @@ def iniciar_sesion():
     except Exception as e: 
         logging.error('No se pudo inicar sesion: ')
         msm_telegram(f'No se pudo iniciar sesion \n{e}')
-        # mensaje_telegram('No se pudo iniciar sesion', None, None, None, None, None, None, e, None, None)
 
 
 #procesar_archivo_excel(r'C:\Users\auxsenadesarrollo\Downloads\reportehistoricohtml.xlsx','replica_registro_codigos_seguridad', 'baterias')
