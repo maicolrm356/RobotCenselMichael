@@ -14,15 +14,13 @@ from psycopg2 import sql, extras
 import glob
 import pandas
 import io
-
-
+# Hola como estas
 # intentos = 1
 # maximos_intentos = 4
 
 tupla_inicar_sesion = (
             'cancelar_chrome.png',
             'eliminar_sesion.png',
-            'cancelar_chrome.png',
             'email.png',
             'abandonar.png',
             'email.png',
@@ -32,7 +30,7 @@ tupla_filtro = (
             'logo_censel.png',
             'logo_reportes_web.png',
             'eventos.png', 
-            'reporte_eventos_por_fecha.png',
+            'reporte_eventos_por_fecha.png',            
             'filtros.png',) 
 
 tupla_postformulario = (    
@@ -41,11 +39,11 @@ tupla_postformulario = (
 
 horarios_procesos = [
     #nombre_proceso                 hora_ejecucion  hora_desde hora_hasta          codigo_alarma                    columnas_excel1    columnas_excel2      columnas_excel3         columnas_excel4    columnas_excel5     tabla                         
-    ('baterias1',  fecha_hoy, fecha_hoy,   '7:00 PM', '12:00', '07:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('baterias2',  fecha_hoy, fecha_hoy,   '12:00 PM','00:00',  '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'replica_registro_codigos_seguridad'),
-    ('intrusion',  fecha_ayer,  fecha_hoy,  '11:08 AM', '19:00', '07:00', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades'),
-    ('fallo_test', fecha_ayer,  fecha_hoy,  '10:59 AM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'replica_seg_control_novedades'),
-    ('panico',     fecha_ayer,  fecha_ayer, '10:52 AM', '00:00', '23:50', 'PANICO SILENCIOSO / PANIC SILENCE - DUR',  'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'replica_seg_control_novedades') #funciona
+    ('baterias1',  fecha_hoy, fecha_hoy,   '7:00 PM', '12:00', '07:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'registro_codigo_seguridad'),
+    ('baterias2',  fecha_hoy, fecha_hoy,   '12:00 PM','00:00',  '12:00', 'FALLO DE BATERIA / BATTERY FAILURE - LOW', 'cue_ncuenta', '',                  '',                    '',                    '',        'registro_codigo_seguridad'),
+    ('intrusion',  fecha_ayer,  fecha_hoy,  '7:00 AM', '19:00', '05:30', 'INTRUSION - BUR',                          'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'seg_control_novedades'),
+    ('fallo_test', fecha_ayer,  fecha_hoy,  '7:30 AM', '19:00', '07:00', 'FALLO DE TEST / TEST FAIL - FTS',          'cue_ncuenta', 'rec_tFechaProceso', 'rec_tFechaRecepcion', 'tablaDatos',          '',        'seg_control_novedades'),
+    ('panico',     fecha_ayer,  fecha_ayer, '6:30 AM', '00:00', '23:50', 'PANICO SILENCIOSO / PANIC SILENCE - DUR',  'cue_ncuenta', 'rec_czona',         'rec_tFechaProceso',   'rec_tFechaRecepcion', '_puerto', 'seg_control_novedades') #funciona
     ] #hora_actual
 # count: nos devuelve el numero de veces que se repite un elemento
 # index: Nos devuelve la posicion de la primera aparicion de un elemento.c 
@@ -116,6 +114,7 @@ def obtener_captura_pantalla(nombre_captura, carpeta):
 
 def iniciar_filtro(img, tupla=None):
     try:
+        time.sleep(8)
         ruta_imagen = obtener_ruta_imagenes(img)
         time.sleep(1)
         coordenadas_imagen = obtener_coordenadas_imagen_pantalla(ruta_imagen)
@@ -125,11 +124,11 @@ def iniciar_filtro(img, tupla=None):
             time.sleep(1)
             ruta_captura = obtener_captura_pantalla(img, 'screenshots')
             ruta_captura = obtener_ruta_imagenes(ruta_captura)
-            time.sleep(5)
+            time.sleep(8)
             if img == 'eventos.png':
                 pyautogui.doubleClick(coordenadas_imagen)
             pyautogui.click(coordenadas_imagen)
-            time.sleep(1)
+            time.sleep(5)
             msm_telegram(f'Se encontro {img} en la pantalla', ruta_captura)
             return True
         else:
@@ -352,7 +351,6 @@ def recorrer_formulario_filtrar():
                 logging.error('Se cancela la ejecucion del proceso censel')
                 os.system("taskkill /f /im chrome.exe")
             else:
-                print('ejecuntando tupla_postforulario')
                 for img in tupla_postformulario:
                     iniciar_filtro(img)
                     if img == 'exportar_a_csv.png':
@@ -384,6 +382,8 @@ def iniciar_sesion():
         time.sleep(2)
         
         # ABRIR CENSEL  
+        time.sleep(2)
+        pyautogui.hotkey('ctrl', 'l')
         time.sleep(2)
         pyautogui.write("censelc.ultrasecuritysolution.com", interval=0.01)
         time.sleep(1)
