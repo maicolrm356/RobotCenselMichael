@@ -19,11 +19,11 @@ import io
 # maximos_intentos = 4
 
 tupla_inicar_sesion = (
-            'cancelar_chrome.png',
             'eliminar_sesion.png',
             'email.png',
             'abandonar.png',
             'email.png',
+            # 'cancelar_chrome.png',            
             )
 
 tupla_filtro = (
@@ -64,15 +64,16 @@ def msm_telegram (mensaje, ruta_imagen=None):
 def obtener_coordenadas_imagen_pantalla(nombre_imagen):
     try:
         coordenadas = pyautogui.locateOnScreen(nombre_imagen, confidence=0.9)
+        print(coordenadas)
         if coordenadas:
             print(f"Ruta imagen {nombre_imagen}. Coordenadas: {coordenadas}")
             logging.info(f"Ruta imagen {nombre_imagen}. Coordenadas: {coordenadas}")
             return coordenadas
         else:
             return None
-    except Exception:
+    except Exception as e:
         logging.error(f'No se encontro la imagen {nombre_imagen} en la pantalla')
-        logging.error(Exception)
+        logging.error(e)
         logging.error('Error en la funcion: obtener_coordenadas_imagen_pantalla.')
 
 def obtener_ruta_imagenes(nombre_imagen):    
@@ -129,6 +130,8 @@ def iniciar_filtro(img, tupla=None):
                 pyautogui.doubleClick(coordenadas_imagen)
             pyautogui.click(coordenadas_imagen)
             time.sleep(5)
+            if img == 'logo_reportes_web.png':
+                time.sleep(20)
             msm_telegram(f'Se encontro {img} en la pantalla', ruta_captura)
             return True
         else:
@@ -136,10 +139,10 @@ def iniciar_filtro(img, tupla=None):
                     ruta_captura = obtener_captura_pantalla(img, 'screenshots')
                     ruta_captura = obtener_ruta_imagenes(ruta_captura)
                     msm_telegram(f'No se encontro la imagen: {img} en la pantalla. \nSe cierra el navegador y se inicia el proceso nuevamente.', ruta_captura)
-                    os.system("taskkill /f /im chrome.exe")
+                    os.system("taskkill /F /IM chrome.exe")
                     time.sleep(2)
                     iniciar_sesion()
-    except Exception as e:
+    except Exception as e: 
         logging.error(f'Ocurrio un error al tratar de encontrar la imagen en la pantalla y dar click: {e}')
         logging.error('Ocurrio un error en la funcion: iniciar_filtro.')
         logging.error(f'Parametro recibido en iniciar_filtro: {img}')
@@ -376,7 +379,7 @@ def iniciar_sesion():
         msm_telegram(f"!! SE INICIA PROCESO DE CENSEL A LAS {hora_actual} !!")
         pyautogui.hotkey('win', 'r')
         time.sleep(2)
-        pyautogui.write('chrome --start-maximized', interval=0.01)
+        pyautogui.write('chrome --incognito --start-maximized', interval=0.01)
         time.sleep(2)
         pyautogui.press('enter')
         time.sleep(2)

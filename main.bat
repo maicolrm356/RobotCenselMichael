@@ -1,3 +1,4 @@
 @echo off
-cd /d"C:\Users\auxsenadesarrollo\Desktop\RobotCenselMichael"
+cd /d"C:\RobotCenselMichael-main"
+call venv_censel\Scripts\activate
 python main.py
